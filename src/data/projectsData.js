@@ -1,4 +1,5 @@
 import NewYearCountdown from "../assets/projects/NewyearCountdown.png";
+import PortfolioWesite from "../assets/projects/PortfolioWebsite.png";
 export const projects = [
   {
     id: 1,
@@ -8,5 +9,14 @@ export const projects = [
     github: "https://github.com/simonwsesuraj/NewYearCoutdownTimer",
     live: "https://simonwsesuraj.github.io/NewYearCoutdownTimer/",
     tech: ["Html","Css","JavaScript"],
+  },
+  {
+    id: 2,
+    title: "Portfolio Website",
+    description: "A personal portfolio website built using React. It showcases my projects, skills, and experience in a visually appealing and responsive design. The website includes sections for an about me, project gallery, and contact information.",
+    image: PortfolioWesite,
+    github: "https://github.com/simonwsesuraj/Portfolio",
+    live : "https://portfolio-kohl-mu-26.vercel.app/",
+    tech: ["React","Css","Bootstrap"],
   },
 ];
