@@ -1,0 +1,118 @@
+.certifications-section {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  min-height: calc(100vh - 70px);
+  color: white;
+  padding-top: 80px;
+}
+
+/* Animated Section Title */
+.cert-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, #0dcaf0, #c084fc, #facc15);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 5s ease infinite;
+  position: relative;
+}
+
+.cert-title::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  left: 0;
+  bottom: -8px;
+  background: #0dcaf0;
+  transition: width 0.4s ease;
+}
+
+.cert-title:hover::after {
+  width: 100%;
+}
+
+/* Gradient animation */
+@keyframes gradientMove {
+  0% { background-position: 0%; }
+  50% { background-position: 100%; }
+  100% { background-position: 0%; }
+}
+
+/* Text gradient for subtitles */
+.text-gradient {
+  background: linear-gradient(90deg, #0dcaf0, #c084fc, #facc15);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+}
+
+/* Card hover effect */
+.cert-card {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.hover-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(13, 202, 240, 0.3);
+}
+
+/* Image zoom on hover */
+.img-wrapper {
+  width: 100%;
+  background: transparent; /* remove black */
+  overflow: hidden;
+}
+
+.cert-img {
+  width: 100%;
+  height: auto;   /* 🔥 auto height */
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.hover-card:hover .cert-img {
+  transform: scale(1.1);
+}
+
+/* Button hover */
+.hover-btn {
+  transition: all 0.3s ease;
+}
+
+.hover-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #0dcaf0;
+}
+
+/* Card fade-in animation */
+.cert-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 576px) {
+  .cert-img {
+    height: 180px;
+  }
+  .hover-btn {
+    width: 100%;
+  }
+  .cert-title {
+    font-size: 2rem;
+  }
+}

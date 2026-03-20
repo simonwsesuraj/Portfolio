@@ -1,0 +1,67 @@
+.about-card {
+  border: none;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* Progress bar smooth animation */
+.progress-bar {
+  transition: width 1s ease-in-out;
+}
+
+.about-section {
+  min-height: calc(100vh - 70px);
+  width: 100%;
+  background: linear-gradient(135deg, #0b1f3a, #111);
+  color: #ffffff;
+}
+
+
+/* 🔥 Gradient animated text */
+.about-title {
+  font-size: 2.5rem;
+  background: linear-gradient(45deg, #0dcaf0, #c084fc, #0dcaf0);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 5s ease infinite;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Gradient animation */
+@keyframes gradientMove {
+  0% { background-position: 0%; }
+  50% { background-position: 100%; }
+  100% { background-position: 0%; }
+}
+
+/* ✨ Underline animation */
+.about-title::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  left: 0;
+  bottom: -5px;
+  background: #0dcaf0;
+  transition: width 0.4s ease;
+}
+
+.about-title:hover::after {
+  width: 100%;
+}
+
+/* 💫 Glow + scale on hover */
+.about-title:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 15px rgba(13, 202, 240, 0.6);
+  transition: all 0.3s ease;
+}
+

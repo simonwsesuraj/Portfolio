@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+*{
+  margin:0px;
+  padding:0px;
+  box-sizing:border-box;
+  font-family: 'Prata', serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  min-height: calc(100vh - 70px);
+  width: 100vw;
+  scroll-margin-top: 70px;
+}
+
+
+body {
+  overflow-x: hidden;
+  
+}

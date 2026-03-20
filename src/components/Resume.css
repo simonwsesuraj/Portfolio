@@ -1,0 +1,175 @@
+/* Resume Section */
+.resume-section {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  min-height: calc(100vh - 70px);
+  padding-top: 80px;
+}
+
+/* Header */
+.resume-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, #0dcaf0, #c084fc, #0dcaf0);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 5s ease infinite;
+  position: relative;
+}
+
+.resume-title::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  left: 0;
+  bottom: -8px;
+  background: #0dcaf0;
+  transition: width 0.4s ease;
+}
+
+.resume-title:hover::after {
+  width: 100%;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #0dcaf0, #c084fc, #facc15);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.text-gradient:hover {
+  transform: scale(1.05);
+}
+
+/* Download Button */
+.resume-btn {
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.resume-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #0dcaf0;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Timeline Items */
+.timeline-item {
+  padding: 15px;
+  border-left: 3px solid #0dcaf0;
+  position: relative;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 5px;
+}
+
+.timeline-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(13, 202, 240, 0.4);
+  background: rgba(255,255,255,0.05);
+}
+
+.timeline-icon {
+  width: 12px;
+  height: 12px;
+  background: #0dcaf0;
+  border-radius: 50%;
+  position: absolute;
+  left: -7px;
+  top: 15px;
+}
+
+/* Skill Bars */
+.skill-bar {
+  position: relative;
+  height: 25px;
+  background: #1f2937;
+  border-radius: 25px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.skill-bar:hover {
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(13,202,240,0.4);
+}
+
+.skill-progress {
+  position: relative;
+  height: 100%;
+  background: linear-gradient(90deg, #0dcaf0, #c084fc);
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  color: #fff;
+  font-weight: 500;
+  animation: fillBar 1.2s ease-out forwards;
+}
+
+@keyframes fillBar {
+  from { width: 0; }
+  to { width: var(--width); }
+}
+
+/* Hover effect for hobby cards */
+.hover-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(13,202,240,0.3);
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 1.8rem;
+  background: linear-gradient(90deg, #0dcaf0, #c084fc, #facc15);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 5s ease infinite;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Gradient animation */
+@keyframes gradientMove {
+  0% { background-position: 0%; }
+  50% { background-position: 100%; }
+  100% { background-position: 0%; }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 576px) {
+  .skill-bar {
+    height: 30px;
+  }
+  .skill-progress {
+    font-size: 0.9rem;
+    padding: 0 8px;
+  }
+  .resume-title {
+    font-size: 2rem;
+  }
+  .section-title {
+    font-size: 1.5rem;
+  }
+}

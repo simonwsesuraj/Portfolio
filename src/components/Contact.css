@@ -1,0 +1,149 @@
+.contact-section {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  min-height: calc(100vh - 70px);
+  color: white;
+  padding-top: 80px;
+}
+
+/* Animated Titles */
+.contact-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, #0dcaf0, #c084fc, #facc15);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 5s ease infinite;
+  position: relative;
+}
+
+.contact-title::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  left: 0;
+  bottom: -8px;
+  background: #0dcaf0;
+  transition: width 0.4s ease;
+}
+
+.contact-title:hover::after {
+  width: 100%;
+}
+
+.contact-subtitle {
+  font-size: 1.8rem;
+  background: linear-gradient(90deg, #0dcaf0, #c084fc, #facc15);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 5s ease infinite;
+}
+
+/* Gradient animation */
+@keyframes gradientMove {
+  0% { background-position: 0%; }
+  50% { background-position: 100%; }
+  100% { background-position: 0%; }
+}
+
+/* Contact Cards & Form */
+.contact-card, .card {
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: rgba(255,255,255,0.05);
+}
+
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(13, 202, 240, 0.3);
+}
+
+/* Text gradient for emails, phone, location */
+.text-gradient {
+  background: linear-gradient(90deg, #0dcaf0, #c084fc, #facc15);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+}
+
+/* Buttons */
+.hover-btn {
+  transition: all 0.3s ease;
+}
+.hover-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #0dcaf0;
+}
+
+/* Input fields hover/focus */
+.hover-input:focus {
+  border-color: #0dcaf0;
+  box-shadow: 0 0 10px #0dcaf0;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Social icons hover */
+.social-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.social-icon-linkedin:hover {
+  background: white;
+  color: #0d6efd;
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+.social-icon-github:hover {
+  background: white;
+  color:black;
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+.social-icon-instagram:hover {
+  background: white;
+  color:rgb(231, 8, 45);
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 576px) {
+  .contact-title {
+    font-size: 2rem;
+  }
+  .contact-subtitle {
+    font-size: 1.4rem;
+  }
+ 
+}
