@@ -1,5 +1,6 @@
 import NewYearCountdown from "../assets/projects/NewyearCountdown.png";
 import PortfolioWesite from "../assets/projects/PortfolioWebsite.png";
+import WeatherApp from "../assets/projects/WeatherApp.png";
 export const projects = [
   {
     id: 1,
@@ -18,5 +19,15 @@ export const projects = [
     github: "https://github.com/simonwsesuraj/Portfolio",
     live : "https://portfolio-kohl-mu-26.vercel.app/",
     tech: ["React","Css","Bootstrap"],
+  },
+
+  {
+    id: 3,
+    title: "Weather App",
+    description: "A simple Weather App built with Django that shows real-time weather data for any city. Users can view temperature, humidity, pressure, and conditions through a clean, responsive UI. Great for learning API integration and dynamic web development. ",
+    image: WeatherApp,
+    github: "https://github.com/simonwsesuraj/WeatherApp-Django-",
+    live : "https://weatherapp-django-6mwq.onrender.com//",
+    tech: ["Django","Css","Bootstrap"],
   },
 ];
