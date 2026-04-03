@@ -10,6 +10,7 @@ import Projects from './components/Projects';
 import Resume from './components/Resume';
 import Certifications from './components/Certifications';
 import Contact from './components/Contact';
+import SEOHelmet from './components/SEOHelmet';
 function App() {
   useEffect(() => {
   AOS.init({ duration: 1000 });
@@ -17,6 +18,7 @@ function App() {
 
   return (
     <>
+     <SEOHelmet/>
      <Header/>
      <Hero/>
      <About/>

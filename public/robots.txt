@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+
+Sitemap: https://simonsesuraj.vercel.app/sitemap.xml
