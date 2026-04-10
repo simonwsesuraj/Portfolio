@@ -1,6 +1,8 @@
 import NewYearCountdown from "../assets/projects/NewyearCountdown.png";
 import PortfolioWesite from "../assets/projects/PortfolioWebsite.png";
 import WeatherApp from "../assets/projects/WeatherApp.png";
+import StudentForm from "../assets/projects/StudentForm.png";
+
 export const projects = [
   {
     id: 1,
@@ -25,9 +27,18 @@ export const projects = [
     id: 3,
     title: "Weather App",
     description: "A simple Weather App built with Django that shows real-time weather data for any city. Users can view temperature, humidity, pressure, and conditions through a clean, responsive UI. Great for learning API integration and dynamic web development. ",
-    image: WeatherApp,
+    image: StudentForm,
     github: "https://github.com/simonwsesuraj/WeatherApp-Django-",
     live : "https://weatherapp-django-6mwq.onrender.com//",
     tech: ["Django","Css","Bootstrap"],
+  },
+  {
+    id: 4,
+    title: "Student Form",
+    description: "A modern React form application built using functional components and hooks. It includes controlled inputs, form validation, and dynamic state handling to efficiently manage user data submission.  ",
+    image: WeatherApp,
+    github: "https://github.com/simonwsesuraj/StudentForm-React-",
+    live : "https://student-form-react-ivory.vercel.app/",
+    tech: ["React","CSS"],
   },
 ];
