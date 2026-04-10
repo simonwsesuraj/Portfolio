@@ -36,7 +36,7 @@ export const projects = [
     id: 4,
     title: "Student Form",
     description: "A modern React form application built using functional components and hooks. It includes controlled inputs, form validation, and dynamic state handling to efficiently manage user data submission.  ",
-    image: WeatherApp,
+    image: StudentForm,
     github: "https://github.com/simonwsesuraj/StudentForm-React-",
     live : "https://student-form-react-ivory.vercel.app/",
     tech: ["React","CSS"],
