@@ -29,7 +29,7 @@ export const projects = [
     description: "A simple Weather App built with Django that shows real-time weather data for any city. Users can view temperature, humidity, pressure, and conditions through a clean, responsive UI. Great for learning API integration and dynamic web development. ",
     image: StudentForm,
     github: "https://github.com/simonwsesuraj/WeatherApp-Django-",
-    live : "https://weatherapp-django-6mwq.onrender.com//",
+    live : "https://weatherapp-django-6mwq.onrender.com/",
     tech: ["Django","Css","Bootstrap"],
   },
   {
