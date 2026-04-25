@@ -49,6 +49,6 @@ export const projects = [
     image: SalaryPrediction,
     github: "https://github.com/simonwsesuraj/SalaryPrediction-React-FastAPI-",
     live : "https://salary-prediction-react-fast-api.vercel.app/",
-    tech: ["Python","Scikit-learn","FastAPI","React"],
+    tech: ["Scikit-learn","FastAPI","React"],
   },
 ];
