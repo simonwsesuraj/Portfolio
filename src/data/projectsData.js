@@ -2,6 +2,7 @@ import NewYearCountdown from "../assets/projects/NewyearCountdown.png";
 import PortfolioWesite from "../assets/projects/PortfolioWebsite.png";
 import WeatherApp from "../assets/projects/WeatherApp.png";
 import StudentForm from "../assets/projects/StudentForm.png";
+import SalaryPrediction from "../assets/projects/SalaryPrediction.png";
 
 export const projects = [
   {
@@ -40,5 +41,14 @@ export const projects = [
     github: "https://github.com/simonwsesuraj/StudentForm-React-",
     live : "https://student-form-react-ivory.vercel.app/",
     tech: ["React","CSS"],
+  },
+  {
+    id: 5,
+    title: "Salary Prediction",
+    description: "Employee Salary Prediction Web App built using Machine Learning with FastAPI backend and React frontend. The model predicts salary based on age, gender, education level, job title, and experience. Includes dynamic dropdowns, REST API integration, and interactive UI for real-time predictions.  ",
+    image: SalaryPrediction,
+    github: "https://github.com/simonwsesuraj/SalaryPrediction-React-FastAPI-",
+    live : "https://salary-prediction-react-fast-api.vercel.app/",
+    tech: ["Python","Scikit-learn","FastAPI","React"],
   },
 ];
