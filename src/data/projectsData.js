@@ -3,6 +3,7 @@ import PortfolioWesite from "../assets/projects/PortfolioWebsite.png";
 import WeatherApp from "../assets/projects/WeatherApp.png";
 import StudentForm from "../assets/projects/StudentForm.png";
 import SalaryPrediction from "../assets/projects/SalaryPrediction.png";
+import MealDB from "../assets/projects/MealDB.png";
 
 export const projects = [
   {
@@ -50,5 +51,14 @@ export const projects = [
     github: "https://github.com/simonwsesuraj/SalaryPrediction-React-FastAPI-",
     live : "https://salary-prediction-react-fast-api.vercel.app/",
     tech: ["Scikit-learn","FastAPI","React"],
+  },
+  {
+    id: 6,
+    title: "MealDB",
+    description: "Meal Explorer is a responsive React application that helps users discover meals using the TheMealDB API. Users can browse meals by category, search for their favorite dishes, view detailed meal information including ingredients and cooking instructions, and manage a personalized list of favorite meals. ",
+    image: MealDB,
+    github: "https://github.com/simonwsesuraj/MealDB",
+    live : "https://meal-db-delta.vercel.app/search?q=Chicken",
+    tech: ["React","TailwindCSS"],
   },
 ];
