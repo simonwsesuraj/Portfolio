@@ -1,67 +1,134 @@
-.about-card {
-  border: none;
-  border-radius: 15px;
-  transition: all 0.3s ease;
-}
-
-.about-card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-}
-
-/* Progress bar smooth animation */
-.progress-bar {
-  transition: width 1s ease-in-out;
-}
-
 .about-section {
-  min-height: calc(100vh - 70px);
-  width: 100%;
-  background: linear-gradient(135deg, #0b1f3a, #111);
-  color: #ffffff;
-}
-
-
-/* 🔥 Gradient animated text */
-.about-title {
-  font-size: 2.5rem;
-  background: linear-gradient(45deg, #0dcaf0, #c084fc, #0dcaf0);
-  background-size: 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradientMove 5s ease infinite;
+  background: linear-gradient(180deg, #070b14 0%, #0a1122 100%);
   position: relative;
-  display: inline-block;
-  cursor: pointer;
 }
 
-/* Gradient animation */
-@keyframes gradientMove {
-  0% { background-position: 0%; }
-  50% { background-position: 100%; }
-  100% { background-position: 0%; }
+.about-bio-card {
+  border-left: 3px solid #38bdf8;
 }
 
-/* ✨ Underline animation */
-.about-title::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 3px;
-  left: 0;
-  bottom: -5px;
-  background: #0dcaf0;
-  transition: width 0.4s ease;
+.about-text {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.75;
 }
 
-.about-title:hover::after {
-  width: 100%;
+.about-credentials-box {
+  background: rgba(56, 189, 248, 0.05);
+  border: 1px solid rgba(56, 189, 248, 0.15);
 }
 
-/* 💫 Glow + scale on hover */
-.about-title:hover {
-  transform: scale(1.05);
-  text-shadow: 0 0 15px rgba(13, 202, 240, 0.6);
+.cred-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(56, 189, 248, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cred-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.cred-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.btn-about-action {
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+  color: #070b14;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-about-action:hover {
+  color: #070b14;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
+}
+
+.btn-about-outline {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-about-outline:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+/* Pillar Detail Cards */
+.pillar-detail-card {
   transition: all 0.3s ease;
 }
 
+.pillar-detail-card:hover {
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.pillar-card-icon {
+  font-size: 1.7rem;
+}
+
+.pillar-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.pillar-tagline {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.pillar-tech-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.18);
+  padding: 3px 10px;
+  border-radius: 6px;
+}
+
+.pillar-points-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pillar-point-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+}
+
+.point-check {
+  color: #10b981;
+  font-size: 0.9rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}

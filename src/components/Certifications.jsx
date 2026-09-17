@@ -1,39 +1,192 @@
-import { FaExternalLinkAlt } from "react-icons/fa";
-import { certifications } from "../data/certificationsData";
+import { useState } from "react";
+import { certifications } from "../data/portfolioData";
+import { 
+  FaExternalLinkAlt, 
+  FaAward, 
+  FaTimes, 
+  FaCheckCircle, 
+  FaSearchPlus,
+  FaDatabase,
+  FaBrain,
+  FaCode,
+  FaLayerGroup
+} from "react-icons/fa";
 import './Certifications.css';
 
 export default function Certifications() {
-  return (
-    <section className="certifications-section py-5" id="certifications">
-      <div className="container">
+  const [activeCertCategory, setActiveCertCategory] = useState("all");
+  const [previewCert, setPreviewCert] = useState(null);
 
+  const categories = [
+    { id: "all", label: "All Credentials", icon: <FaLayerGroup /> },
+    { id: "dba", label: "Oracle & Database", icon: <FaDatabase /> },
+    { id: "ai", label: "Python & AI", icon: <FaBrain /> },
+    { id: "fullstack", label: "Web Engineering", icon: <FaCode /> }
+  ];
+
+  const filteredCerts = certifications.filter((c) => {
+    if (activeCertCategory === "all") return true;
+    return c.category === activeCertCategory;
+  });
+
+  return (
+    <section className="certifications-section" id="certifications">
+      <div className="container">
+        
         {/* Section Header */}
-        <div className="text-center mb-5 fade-in" data-aos="fade-up">
-          <h2 className="fw-bold cert-title">Certifications</h2>
-          <p className="text-gradient">My professional certifications and courses</p>
+        <div className="text-center mb-5" data-aos="fade-up">
+          <div className="section-badge">Verified Achievements</div>
+          <h2 className="section-title">Certifications & Training</h2>
+          <p className="section-subtitle">
+            Industry accredited certifications and academic specializations validating technical rigor.
+          </p>
         </div>
 
-        {/* Certification Cards */}
+        {/* Category Pills */}
+        <div className="role-pills-container mb-5" data-aos="fade-up">
+          {categories.map((cat) => (
+            <button
+              key={cat.id}
+              className={`role-pill ${activeCertCategory === cat.id ? "active" : ""}`}
+              onClick={() => setActiveCertCategory(cat.id)}
+            >
+              {cat.icon}
+              <span>{cat.label}</span>
+            </button>
+          ))}
+        </div>
+
+        {/* Certifications Grid */}
         <div className="row g-4">
-          {certifications.map((cert, index) => (
-            <div key={index} className="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay={index*100}>
-              <div className="card h-100 cert-card shadow-sm border-0 hover-card">
-                <div className="img-wrapper">
-                  <img src={cert.image} className="card-img-top cert-img" alt={cert.title} />
+          {filteredCerts.map((cert, index) => (
+            <div 
+              key={cert.id || index} 
+              className="col-12 col-md-6 col-lg-4" 
+              data-aos="fade-up" 
+              data-aos-delay={(index % 3) * 100}
+            >
+              <div className="cert-card glass-card h-100 d-flex flex-column">
+                
+                {/* Image Wrap with Preview Click */}
+                <div 
+                  className="cert-img-wrap" 
+                  onClick={() => setPreviewCert(cert)}
+                  title="Click to view full certificate"
+                >
+                  <img 
+                    src={cert.image} 
+                    alt={cert.title} 
+                    className="cert-img" 
+                    loading="lazy"
+                  />
+                  <div className="cert-img-overlay">
+                    <span className="overlay-preview-btn">
+                      <FaSearchPlus /> Preview Certificate
+                    </span>
+                  </div>
+                  <span className="cert-year-badge">{cert.year}</span>
                 </div>
-                <div className="card-body d-flex flex-column">
-                  <h5 className="card-title">{cert.title}</h5>
-                  <p className="card-text text-info">{cert.issuer} | {cert.year}</p>
-                  <a href={cert.link} target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary mt-auto hover-btn">
-                    View Certificate <FaExternalLinkAlt className="ms-1"/>
-                  </a>
+
+                {/* Content */}
+                <div className="p-4 d-flex flex-column flex-grow-1">
+                  
+                  <div className="d-flex align-items-center gap-2 mb-2">
+                    <FaAward className="text-cyan" />
+                    <span className="cert-issuer">{cert.issuer}</span>
+                  </div>
+
+                  <h4 className="cert-card-title font-heading mb-3">
+                    {cert.title}
+                  </h4>
+
+                  {cert.skills && (
+                    <div className="d-flex flex-wrap gap-1 mb-4">
+                      {cert.skills.map((skill, i) => (
+                        <span key={i} className="cert-skill-pill">
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Actions */}
+                  <div className="mt-auto d-flex gap-2 pt-3 border-top border-secondary border-opacity-25">
+                    <button 
+                      className="btn-cert-inspect"
+                      onClick={() => setPreviewCert(cert)}
+                    >
+                      Inspect
+                    </button>
+
+                    {cert.link && (
+                      <a
+                        href={cert.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-cert-verify"
+                      >
+                        Verify <FaExternalLinkAlt className="ms-1" size={12} />
+                      </a>
+                    )}
+                  </div>
+
                 </div>
+
               </div>
             </div>
           ))}
         </div>
 
       </div>
+
+      {/* Certificate Lightbox / Modal */}
+      {previewCert && (
+        <div className="cert-lightbox-backdrop" onClick={() => setPreviewCert(null)}>
+          <div className="cert-lightbox-box glass-card" onClick={(e) => e.stopPropagation()}>
+            
+            <div className="cert-lightbox-header">
+              <div>
+                <h4 className="text-white font-heading m-0">{previewCert.title}</h4>
+                <small className="text-muted">{previewCert.issuer} · {previewCert.year}</small>
+              </div>
+              <button 
+                className="modal-close-btn"
+                onClick={() => setPreviewCert(null)}
+                aria-label="Close certificate preview"
+              >
+                <FaTimes />
+              </button>
+            </div>
+
+            <div className="cert-lightbox-body">
+              <img 
+                src={previewCert.image} 
+                alt={previewCert.title} 
+                className="cert-lightbox-img" 
+              />
+            </div>
+
+            <div className="cert-lightbox-footer">
+              {previewCert.credentialId && (
+                <div className="cert-cred-id font-mono">
+                  Credential ID: <span>{previewCert.credentialId}</span>
+                </div>
+              )}
+              {previewCert.link && (
+                <a
+                  href={previewCert.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-lightbox-verify"
+                >
+                  Open Official Verification Link <FaExternalLinkAlt className="ms-2" size={13} />
+                </a>
+              )}
+            </div>
+
+          </div>
+        </div>
+      )}
     </section>
   );
 }
