@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { projects } from "../data/portfolioData";
+import { projects } from "../data/projectsData";
 import { 
   FaGithub, 
   FaExternalLinkAlt, 

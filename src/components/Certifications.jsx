@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { certifications } from "../data/portfolioData";
+import { certifications } from "../data/certificationsData";
 import { 
   FaExternalLinkAlt, 
   FaAward, 
@@ -9,9 +9,12 @@ import {
   FaDatabase,
   FaBrain,
   FaCode,
-  FaLayerGroup
+  FaLayerGroup,
+  FaPython
 } from "react-icons/fa";
 import './Certifications.css';
+import { Si365Datascience,SiHiveBlockchain } from "react-icons/si";
+import { GiCyberEye } from "react-icons/gi";
 
 export default function Certifications() {
   const [activeCertCategory, setActiveCertCategory] = useState("all");
@@ -19,9 +22,12 @@ export default function Certifications() {
 
   const categories = [
     { id: "all", label: "All Credentials", icon: <FaLayerGroup /> },
-    { id: "dba", label: "Oracle & Database", icon: <FaDatabase /> },
-    { id: "ai", label: "Python & AI", icon: <FaBrain /> },
-    { id: "fullstack", label: "Web Engineering", icon: <FaCode /> }
+    { id: "python", label: "Python", icon: <FaPython /> },
+    { id: "ai", label: "AI", icon: <FaBrain /> },
+    // { id: "fullstack", label: "Web Engineering", icon: <FaCode /> },
+    { id: "cybersecurity", label: "Cybersecurity", icon: <GiCyberEye /> },
+    { id: "datascience", label: "DataScience", icon: <Si365Datascience /> },
+    { id: "blockchain", label: "Blockchain", icon: <SiHiveBlockchain /> }
   ];
 
   const filteredCerts = certifications.filter((c) => {
