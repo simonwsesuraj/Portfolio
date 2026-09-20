@@ -30,7 +30,7 @@ export const rawProjects = [
     ],
     image: "Portfolio.png",
     github: "https://github.com/simonwsesuraj/Portfolio",
-    live: "https://portfolio-kohl-mu-26.vercel.app/",
+    live: "https://simonwsesuraj.vercel.app/",
     tech: ["React 19", "Vite", "Vanilla CSS", "SEO / JSON-LD", "Bootstrap"]
   },
   {
