@@ -41,10 +41,10 @@ export default function Certifications() {
         
         {/* Section Header */}
         <div className="text-center mb-5" data-aos="fade-up">
-          <div className="section-badge">Verified Achievements</div>
-          <h2 className="section-title">Certifications & Training</h2>
+          <div className="section-badge">Certifications & Training</div>
+          
           <p className="section-subtitle">
-            Industry accredited certifications and academic specializations validating technical rigor.
+            Technical certifications and training programs covering Python, AI, cybersecurity, data science, and blockchain.
           </p>
         </div>
 

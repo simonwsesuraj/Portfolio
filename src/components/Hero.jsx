@@ -53,7 +53,7 @@ export default function Hero() {
 
             {/* Dynamic Animated Role Subheading */}
             <div className="hero-role-wrapper mb-4">
-              <span className="role-prefix">Specializing in </span>
+              <span className="role-prefix">Focused on </span>
               <span className="role-highlight">
                 {personalInfo.titles[activeRoleIndex]}
               </span>
@@ -76,7 +76,7 @@ export default function Hero() {
               </div>
               <div className="pillar-chip">
                 <FaBrain className="pillar-icon text-emerald" />
-                <span>AI & ML (FastAPI/Scikit)</span>
+                <span>AI & ML (Python/Scikit-learn)</span>
               </div>
             </div>
 
@@ -90,7 +90,7 @@ export default function Hero() {
                 href={personalInfo.resumePdf} 
                 download="Simon_Sesuraj_Resume.pdf" 
                 className="btn-hero-secondary"
-                title="Download verified resume"
+                title="Download resume"
               >
                 <FaFileDownload /> Download CV
               </a>
@@ -99,6 +99,7 @@ export default function Hero() {
                 onClick={handleCopyEmail} 
                 className={`btn-hero-copy ${copied ? 'copied' : ''}`}
                 title="Copy email to clipboard"
+                aria-label="Copy email address"
               >
                 {copied ? <FaCheck /> : <FaCopy />}
                 <span>{copied ? "Copied!" : "Copy Email"}</span>
@@ -149,7 +150,7 @@ export default function Hero() {
               <div className="hero-avatar-frame">
                 <img 
                   src={personalInfo.avatar} 
-                  alt={personalInfo.name}
+                  alt={`${personalInfo.name} - Full Stack Developer and AI & Machine Learning Developer`}
                   className="hero-avatar-img"
                   loading="eager"
                 />

@@ -5,17 +5,17 @@ export const personalInfo = {
   titles: [
     "Full Stack Developer",
     "Oracle Database Administrator (DBA)",
-    "AI & Machine Learning Engineer"
+    "AI & Machine Learning Developer"
   ],
-  headline: "Full Stack Developer | Oracle DBA | AI & Machine Learning Enthusiast",
-  bio: "Passionate technologist with dual expertise in high-performance Web Engineering (React, Django), Enterprise Database Administration (Oracle SQL, Performance Tuning), and Applied Artificial Intelligence (FastAPI, Scikit-learn). Dedicated to engineering scalable, secure, data-driven systems that solve complex real-world problems.",
-  shortBio: "Building high-performance full-stack applications, resilient Oracle database architectures, and intelligent AI models.",
+  headline: "Computer Science Postgraduate | Full Stack | Oracle DBA | AI & ML",
+  bio: "Computer Science postgraduate student building practical solutions across full-stack web development, Oracle database administration, and artificial intelligence and machine learning using Python and modern development tools.",
+  shortBio:  "Building full-stack applications, working with Oracle database administration, and developing practical AI and machine learning solutions.",
   location: "Trichy, Tamil Nadu, India",
   email: "simonwsesuraj@gmail.com",
   phone: "+91 9597964813",
   whatsappNumber: "919597964813",
   whatsappMessage: "Hello Simon, I came across your portfolio and would like to connect regarding an opportunity.",
-  statusBadge: "Open to Full-Time Roles & High-Impact Opportunities",
+  statusBadge: "Open to Full-Time Opportunities",
   avatar: resolveAsset("hero.png", "/hero.png"),
   resumePdf: resolveAsset("resume.pdf", "/resume.pdf"),
   socials: {
@@ -50,7 +50,7 @@ export const roleTracks = [
     id: "dba",
     label: "Oracle DBA",
     icon: "FaDatabase",
-    description: "Enterprise Oracle Database management, SQL, indexing,Backup & Recovery and performance tuning"
+    description: "Oracle Database administration, SQL, indexing, backup and recovery, and performance tuning"
   },
   {
     id: "ai",
@@ -83,7 +83,7 @@ export const skillsData = {
   ],
   ai: [
     { name: "Python for AI/ML", level: 95, icon: "FaPython", desc: "Data structures, algorithms, functional programming, OOP" },
-    { name: "FastAPI", level: 85, icon: "FaBolt", desc: "High-performance asynchronous inference microservices" },
+    { name: "FastAPI", level: 85, icon: "FaBolt", desc: "REST APIs for serving machine learning models" },
     { name: "Scikit-learn", level: 80, icon: "FaBrain", desc: "Regression, classification, cross-validation, pipelines" },
     { name: "Pandas & NumPy", level: 90, icon: "FaChartBar", desc: "Data wrangling, matrix manipulation, missing value imputation" },
     { name: "Data Visualization", level: 85, icon: "FaChartLine", desc: "Matplotlib & Seaborn exploratory data analysis" },
@@ -119,7 +119,8 @@ export const recruiterHighlights = [
   {
     title: "3 Core Pillars",
     subtitle: "Full Stack + Oracle DBA + AI",
-    description: "Versatile engineer capable of building responsive UIs, optimizing enterprise relational data, and serving ML models."
+    description:
+  "A cross-disciplinary profile covering responsive web development, Oracle database administration, and practical machine learning solutions."
   },
   {
     title: "Strong Academic Record",
@@ -127,8 +128,8 @@ export const recruiterHighlights = [
     description: "Strong theoretical foundation matched with hands-on practical project deployment experience."
   },
   {
-    title: "Production Ready",
-    subtitle: "FastAPI, React, Django",
-    description: "Experience with end-to-end applications deployed live on Vercel and Render with verified performance."
-  }
+  title: "End-to-End Development",
+  subtitle: "FastAPI, React, Django",
+  description: "Experience building and deploying full-stack applications using React, Django, FastAPI, and modern deployment platforms."
+}
 ];

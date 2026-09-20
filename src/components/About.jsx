@@ -11,8 +11,8 @@ export default function About() {
       tech: "React · Django · REST APIs · Bootstrap",
       points: [
         "Responsive, component-driven frontend architecture with clean state patterns",
-        "Secure backend RESTful APIs with Django ORM and JWT authentication",
-        "Performance optimization, sub-second load times, and mobile-first layouts"
+        "RESTful APIs using Django REST Framework, ORM, and JWT authentication",
+        "Performance optimization, responsive design, and mobile-first layouts"
       ]
     },
    {
@@ -24,7 +24,7 @@ export default function About() {
       points: [
         "Oracle Database architecture, SGA components, background processes, and database instance management",
         "Database creation, startup and shutdown, tablespaces, datafiles, and storage administration",
-        "SQL, user management, privileges, listener configuration, and basic database security administration",
+        "SQL, user management, privileges, listener configuration, users, roles, privileges, listener configuration, and basic database administration",
         "Cold backup, hot backup, RMAN backup and recovery, and database recovery procedures",
         "Foundational Oracle Data Guard concepts and Linux-based Oracle Database administration"
       ]
@@ -37,7 +37,7 @@ export default function About() {
       tech: "FastAPI · Scikit-learn · Pandas · Python",
       points: [
         "End-to-end ML model pipelines from exploratory data analysis to inference",
-        "Asynchronous high-throughput REST APIs built with FastAPI and Swagger",
+        "REST APIs for serving machine learning models using FastAPI and Swagger/OpenAPI",
         "Data wrangling, regression, classification, and statistical evaluation"
       ]
     }
@@ -52,7 +52,7 @@ export default function About() {
           <div className="section-badge">Professional Background</div>
           <h2 className="section-title">About Me</h2>
           <p className="section-subtitle">
-            Bridging high-performance frontend interfaces, robust enterprise databases, and intelligent machine learning microservices.
+            Building practical solutions across full-stack web development, Oracle database administration, and artificial intelligence and machine learning.
           </p>
         </div>
 
@@ -61,23 +61,24 @@ export default function About() {
           {/* Left: Summary & Philosophy */}
           <div className="col-12 col-lg-6" data-aos="fade-right">
             <div className="about-bio-card glass-card p-4 p-md-5">
-              <h3 className="font-heading fw-bold mb-3">
+              <h3 className="font-heading fw-bold text-info mb-3">
                 Engineering across the <span className="text-gradient">full technical spectrum</span>
               </h3>
               
               <p className="about-text mb-3">
-                Hello! I'm <strong>Simon Sesuraj</strong>, an analytical software developer based in Trichy, India.
-                Currently pursuing my Master's degree in Computer Science with an academic standing of <strong>CGPA 8.64</strong>, 
-                I focus on architecting resilient end-to-end software solutions.
+                Hello! I'm <strong>Simon Sesuraj W</strong>, a Computer Science postgraduate student based in Trichy, India. I'm currently pursuing my M.Sc. in Computer Science and building practical experience across Full Stack Development, Oracle Database Administration, and Artificial Intelligence & Machine Learning.
               </p>
 
               <p className="about-text mb-4">
-                What sets my profile apart for technical recruiters is my balanced capability across 
-                <strong> frontend/backend web engineering</strong>, deep foundational understanding of 
-                <strong> enterprise Oracle databases & SQL query optimization</strong>, and applied 
-                <strong> AI/machine learning deployment</strong> with FastAPI.
+               My current focus spans
+              <strong> frontend and backend web development</strong>,
+              a strong foundation in
+              <strong> Oracle databases and SQL</strong>,
+              and practical experience building
+              <strong> AI and machine learning solutions</strong>
+              with Python and FastAPI.
               </p>
-
+     
               <div className="about-credentials-box p-3 rounded-3 mb-4">
                 <div className="d-flex align-items-center gap-3">
                   <div className="cred-icon-wrap">

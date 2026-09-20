@@ -10,7 +10,6 @@ import Contact from './components/Contact';
 import SEOHelmet from './components/SEOHelmet';
 import AOS from "aos";
 import "aos/dist/aos.css";
-
 function App() {
   useEffect(() => {
     AOS.init({

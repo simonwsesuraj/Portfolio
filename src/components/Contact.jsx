@@ -78,7 +78,7 @@ export default function Contact() {
                 <FaEnvelope size={24} />
               </div>
               <h5 className="fw-bold text-white mb-1">Email Inquiry</h5>
-              <p className="text-muted small mb-3">{personalInfo.email}</p>
+              <p className="text-light-emphasis small mb-3">{personalInfo.email}</p>
               <a 
                 href={personalInfo.socials.gmailCompose}
                 target="_blank"
@@ -97,7 +97,7 @@ export default function Contact() {
                 <FaWhatsapp size={24} />
               </div>
               <h5 className="fw-bold text-white mb-1">Direct Chat</h5>
-              <p className="text-muted small mb-3">{personalInfo.phone}</p>
+              <p className="text-light-emphasis small mb-3">{personalInfo.phone}</p>
               <a 
                 href={`https://wa.me/${personalInfo.whatsappNumber}?text=${encodeURIComponent(personalInfo.whatsappMessage)}`}
                 target="_blank"
@@ -116,7 +116,7 @@ export default function Contact() {
                 <FaMapMarkerAlt size={24} />
               </div>
               <h5 className="fw-bold text-white mb-1">Location & Availability</h5>
-              <p className="text-muted small mb-2">{personalInfo.location}</p>
+              <p className="text-light-emphasis small mb-2">{personalInfo.location}</p>
               <span className="availability-chip">Available for On-site & Remote Roles</span>
             </div>
           </div>
@@ -130,7 +130,7 @@ export default function Contact() {
               
               <div className="mb-4 text-center">
                 <h3 className="font-heading fw-bold text-white mb-2">Send a Direct Message</h3>
-                <p className="text-muted small">Select your inquiry type to auto-route your message</p>
+                <p className="text-light-emphasis small">  Select an inquiry type to help organize your message</p>
               </div>
 
               {/* Inquiry Intent Selector */}
@@ -241,8 +241,8 @@ export default function Contact() {
             
             <div className="text-center text-md-start">
               <h5 className="font-heading fw-bold text-white mb-1">{personalInfo.name}</h5>
-              <p className="text-muted small m-0">
-                Full Stack Developer · Oracle Database Administrator · AI Engineer
+              <p className="text-light-emphasis small m-0">
+                Full Stack Developer · Oracle Database Administrator · AI & Machine Learning Developer
               </p>
             </div>
 
@@ -288,7 +288,7 @@ export default function Contact() {
 
           </div>
 
-          <div className="text-center mt-4 text-muted small">
+          <div className="text-center mt-4 text-light-emphasis small">
             © {new Date().getFullYear()} {personalInfo.name}. Engineered with React, Vite & Modern CSS.
           </div>
         </footer>

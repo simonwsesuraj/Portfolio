@@ -43,7 +43,7 @@ export default function Resume() {
         
         {/* Section Header */}
         <div className="text-center mb-5" data-aos="fade-up">
-          <div className="section-badge">Verified Credentials</div>
+          <div className="section-badge">Skills & Qualifications</div>
           <h2 className="section-title">Skills & Qualifications</h2>
           <p className="section-subtitle">
             Comprehensive breakdown of software proficiencies, enterprise database competencies, and academic background.
@@ -73,7 +73,7 @@ export default function Resume() {
                 </div>
                 <div>
                   <h3 className="timeline-section-title m-0">Academic Qualifications</h3>
-                  <small className="text-muted">Degree & Academic Performance</small>
+                  <small className="text-light-emphasis">Degree & Academic Performance</small>
                 </div>
               </div>
 
@@ -105,7 +105,7 @@ export default function Resume() {
                 </div>
                 <div>
                   <h3 className="timeline-section-title m-0">Core Competencies</h3>
-                  <small className="text-muted">Recruiter Focus Areas</small>
+                  <small className="text-light-emphasis">Recruiter Focus Areas</small>
                 </div>
               </div>
 
@@ -115,8 +115,8 @@ export default function Resume() {
                     <FaCheckCircle className="text-cyan" />
                     <h5 className="m-0 text-white fw-bold">Full Stack Web Architecture</h5>
                   </div>
-                  <p className="text-muted small m-0 ps-4">
-                    Experienced in building production-grade frontend interfaces with React 19, coupled with scalable Django/Python REST backends and secure relational storage.
+                  <p className="text-light-emphasis small m-0 ps-4">
+                    Experienced in building responsive frontend interfaces with React, coupled with Django/Python REST backends and database integration.
                   </p>
                 </div>
 
@@ -125,8 +125,8 @@ export default function Resume() {
                     <FaCheckCircle className="text-amber" />
                     <h5 className="m-0 text-white fw-bold">Enterprise Oracle Administration</h5>
                   </div>
-                  <p className="text-muted small m-0 ps-4">
-                    Trained in schema normalization, complex SQL analytical querying, stored PL/SQL procedures, and database performance tuning using Explain Plans and cost optimization.
+                  <p className="text-light-emphasis small m-0 ps-4">
+                    Trained in Oracle database architecture, SQL, schema design, users and privileges, tablespaces, listener configuration, backup and recovery, RMAN, and Data Guard fundamentals.
                   </p>
                 </div>
 
@@ -135,8 +135,8 @@ export default function Resume() {
                     <FaCheckCircle className="text-emerald" />
                     <h5 className="m-0 text-white fw-bold">Machine Learning & Microservices</h5>
                   </div>
-                  <p className="text-muted small m-0 ps-4">
-                    Adept at creating predictive models with Scikit-learn, cleaning high-dimensional datasets with Pandas, and deploying asynchronous low-latency REST endpoints using FastAPI.
+                  <p className="text-light-emphasis small m-0 ps-4">
+                    Experienced in building predictive models with Scikit-learn, preparing and analyzing datasets with Pandas and NumPy, and creating REST APIs for machine learning models using FastAPI.
                   </p>
                 </div>
               </div>
@@ -149,7 +149,7 @@ export default function Resume() {
         <div className="skills-matrix-wrap glass-card p-4 p-md-5" data-aos="fade-up">
           <div className="text-center mb-4">
             <h3 className="font-heading fw-bold text-white mb-2">Technical Proficiency Matrix</h3>
-            <p className="text-muted small">Select a domain to inspect specific tools and framework proficiencies</p>
+            <p className="text-light-emphasis small">Select a domain to inspect specific tools and framework proficiencies</p>
           </div>
 
           {/* Skill Filter Tabs */}
