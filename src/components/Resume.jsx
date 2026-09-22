@@ -73,7 +73,7 @@ export default function Resume() {
                 </div>
                 <div>
                   <h3 className="timeline-section-title m-0">Academic Qualifications</h3>
-                  <small className="text-light-emphasis">Degree & Academic Performance</small>
+                  <small className="timeline-subtitle">Degree & Academic Performance</small>
                 </div>
               </div>
 
@@ -105,7 +105,7 @@ export default function Resume() {
                 </div>
                 <div>
                   <h3 className="timeline-section-title m-0">Core Competencies</h3>
-                  <small className="text-light-emphasis">Recruiter Focus Areas</small>
+                  <small className="timeline-subtitle">Recruiter Focus Areas</small>
                 </div>
               </div>
 
@@ -113,9 +113,9 @@ export default function Resume() {
                 <div className="competency-box">
                   <div className="d-flex align-items-center gap-2 mb-1">
                     <FaCheckCircle className="text-cyan" />
-                    <h5 className="m-0 text-white fw-bold">Full Stack Web Architecture</h5>
+                    <h5 className="m-0 competency-title fw-bold">Full Stack Web Architecture</h5>
                   </div>
-                  <p className="text-light-emphasis small m-0 ps-4">
+                  <p className="competency-desc small m-0 ps-4">
                     Experienced in building responsive frontend interfaces with React, coupled with Django/Python REST backends and database integration.
                   </p>
                 </div>
@@ -123,9 +123,9 @@ export default function Resume() {
                 <div className="competency-box">
                   <div className="d-flex align-items-center gap-2 mb-1">
                     <FaCheckCircle className="text-amber" />
-                    <h5 className="m-0 text-white fw-bold">Enterprise Oracle Administration</h5>
+                    <h5 className="m-0 competency-title fw-bold">Enterprise Oracle Administration</h5>
                   </div>
-                  <p className="text-light-emphasis small m-0 ps-4">
+                  <p className="competency-desc small m-0 ps-4">
                     Trained in Oracle database architecture, SQL, schema design, users and privileges, tablespaces, listener configuration, backup and recovery, RMAN, and Data Guard fundamentals.
                   </p>
                 </div>
@@ -133,9 +133,9 @@ export default function Resume() {
                 <div className="competency-box">
                   <div className="d-flex align-items-center gap-2 mb-1">
                     <FaCheckCircle className="text-emerald" />
-                    <h5 className="m-0 text-white fw-bold">Machine Learning & Microservices</h5>
+                    <h5 className="m-0 competency-title fw-bold">Machine Learning & Microservices</h5>
                   </div>
-                  <p className="text-light-emphasis small m-0 ps-4">
+                  <p className="competency-desc small m-0 ps-4">
                     Experienced in building predictive models with Scikit-learn, preparing and analyzing datasets with Pandas and NumPy, and creating REST APIs for machine learning models using FastAPI.
                   </p>
                 </div>
@@ -148,8 +148,8 @@ export default function Resume() {
         {/* Interactive Skills Matrix */}
         <div className="skills-matrix-wrap glass-card p-4 p-md-5" data-aos="fade-up">
           <div className="text-center mb-4">
-            <h3 className="font-heading fw-bold text-white mb-2">Technical Proficiency Matrix</h3>
-            <p className="text-light-emphasis small">Select a domain to inspect specific tools and framework proficiencies</p>
+            <h3 className="font-heading fw-bold skills-matrix-title mb-2">Technical Proficiency Matrix</h3>
+            <p className="skills-matrix-subtitle small mb-0">Select a domain to inspect specific tools and framework proficiencies</p>
           </div>
 
           {/* Skill Filter Tabs */}
@@ -172,7 +172,7 @@ export default function Resume() {
               <div key={index} className="col-12 col-md-6 col-lg-4">
                 <div className="skill-meter-card p-3 rounded-3">
                   <div className="d-flex justify-content-between align-items-center mb-2">
-                    <span className="skill-title fw-bold text-white">{skill.name}</span>
+                    <span className="skill-title fw-bold">{skill.name}</span>
                     <span className="skill-percentage font-mono">{skill.level}%</span>
                   </div>
 
@@ -184,7 +184,7 @@ export default function Resume() {
                   </div>
 
                   {skill.desc && (
-                    <div className="skill-desc-text text-muted small">{skill.desc}</div>
+                    <div className="skill-desc-text small">{skill.desc}</div>
                   )}
                 </div>
               </div>

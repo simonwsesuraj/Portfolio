@@ -1,11 +1,13 @@
 .certifications-section {
-  background: #070b14;
+  background: #f8fafc;
   position: relative;
 }
 
 .cert-card {
   overflow: hidden;
   border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
 }
 
 .cert-img-wrap {
@@ -13,7 +15,7 @@
   width: 100%;
   height: 200px;
   overflow: hidden;
-  background: #0e1526;
+  background: #f1f5f9;
   cursor: pointer;
 }
 
@@ -25,7 +27,7 @@
 }
 
 .cert-img-wrap:hover .cert-img {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 .cert-img-overlay {
@@ -34,7 +36,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(15, 23, 42, 0.7);
+  background: rgba(15, 23, 42, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,9 +49,9 @@
 }
 
 .overlay-preview-btn {
-  background: rgba(56, 189, 248, 0.25);
-  border: 1px solid #38bdf8;
-  color: #fff;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
   padding: 6px 14px;
   border-radius: 8px;
   font-size: 0.85rem;
@@ -57,28 +59,28 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .cert-year-badge {
   position: absolute;
   bottom: 10px;
   right: 10px;
-  background: rgba(15, 23, 42, 0.85);
-  color: #38bdf8;
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  background: #ffffff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 600;
   padding: 2px 8px;
   border-radius: 6px;
-  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .cert-issuer {
   font-size: 0.82rem;
-  font-weight: 600;
-  color: #38bdf8;
+  font-weight: 700;
+  color: #1d4ed8;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -86,41 +88,48 @@
 .cert-card-title {
   font-size: 1.15rem;
   font-weight: 700;
-  color: #fff;
+  color: #0f172a;
   line-height: 1.4;
 }
 
 .cert-skill-pill {
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  padding: 2px 7px;
+  padding: 2px 8px;
   border-radius: 4px;
-  background: rgba(255, 255, 255, 0.05);
-  color: #cbd5e1;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+}
+
+.cert-actions-row {
+  border-top: 1px solid #f1f5f9;
 }
 
 .btn-cert-inspect {
   flex: 1;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #cbd5e1;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #1e293b;
   font-size: 0.85rem;
   font-weight: 600;
   padding: 8px 14px;
   border-radius: 8px;
   cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
   transition: all 0.2s ease;
 }
 
 .btn-cert-inspect:hover {
-  background: rgba(255, 255, 255, 0.12);
-  color: #fff;
+  background: #f8fafc;
+  border-color: #94a3b8;
+  color: #0f172a;
 }
 
 .btn-cert-verify {
   flex: 1;
-  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
-  color: #070b14;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #ffffff;
   font-size: 0.85rem;
   font-weight: 600;
   padding: 8px 14px;
@@ -129,12 +138,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
   transition: all 0.2s ease;
 }
 
 .btn-cert-verify:hover {
-  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
-  color: #070b14;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+  color: #ffffff;
 }
 
 /* Lightbox Modal */
@@ -144,9 +154,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   z-index: 2000;
   display: flex;
   align-items: center;
@@ -161,9 +171,9 @@
   max-height: 92vh;
   overflow-y: auto;
   border-radius: 20px;
-  background: #0f172a;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.25);
   padding: 24px;
 }
 
@@ -173,7 +183,18 @@
   justify-content: space-between;
   margin-bottom: 16px;
   padding-bottom: 14px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.cert-lightbox-title {
+  color: #0f172a;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.cert-lightbox-sub {
+  color: #64748b;
+  font-size: 0.85rem;
 }
 
 .cert-lightbox-body {
@@ -181,7 +202,8 @@
   max-height: 520px;
   overflow: hidden;
   border-radius: 12px;
-  background: #070b14;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -197,36 +219,38 @@
 .cert-lightbox-footer {
   display: flex;
   align-items: center;
-  justify-content:space-between;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
   padding-top: 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid #f1f5f9;
 }
 
 .cert-cred-id {
   font-size: 0.82rem;
-  color: var(--text-muted);
+  color: #475569;
 }
 
 .cert-cred-id span {
-  color: #38bdf8;
+  color: #1d4ed8;
+  font-weight: 600;
 }
 
 .btn-lightbox-verify {
   display: inline-flex;
   align-items: center;
-  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
-  color: #070b14;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #ffffff;
   font-weight: 600;
   font-size: 0.88rem;
   padding: 10px 20px;
   border-radius: 8px;
   text-decoration: none;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
   transition: all 0.2s ease;
 }
 
 .btn-lightbox-verify:hover {
-  color: #070b14;
-  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
 }

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 
 import {
   personSchema,
+  profilePageSchema,
   websiteSchema,
   projectsSchema,
   breadcrumbSchema
@@ -13,6 +14,10 @@ export default function SEOHelmet() {
       {
         id: "person-schema",
         data: personSchema
+      },
+      {
+        id: "profilepage-schema",
+        data: profilePageSchema
       },
       {
         id: "website-schema",

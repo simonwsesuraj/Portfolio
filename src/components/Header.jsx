@@ -42,10 +42,10 @@ export default function Header() {
       <div className="container">
         <nav className="navbar-container">
           {/* Brand */}
-          <a href="#home" className="header-brand" onClick={() => setIsMobileMenuOpen(false)}>
+          <a href="#home" className="header-brand" title="Simon Sesuraj (Simon Sesuraj W) - Full Stack Developer Portfolio" onClick={() => setIsMobileMenuOpen(false)}>
             <span className="brand-dot"></span>
             <span className="brand-name">{personalInfo.name}</span>
-            <span className="brand-badge d-none d-md-inline-block">Full Stack · DBA · AI</span>
+            <span className="brand-badge d-none d-md-inline-block">Full Stack Developer · DBA</span>
           </a>
 
           {/* Desktop Navigation */}

@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-
-Sitemap: https://simonsesuraj.vercel.app/sitemap.xml
+Sitemap: https://simonwsesuraj.vercel.app/sitemap.xml
+Host: https://simonwsesuraj.vercel.app

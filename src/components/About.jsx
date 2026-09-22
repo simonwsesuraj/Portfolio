@@ -61,12 +61,12 @@ export default function About() {
           {/* Left: Summary & Philosophy */}
           <div className="col-12 col-lg-6" data-aos="fade-right">
             <div className="about-bio-card glass-card p-4 p-md-5">
-              <h3 className="font-heading fw-bold text-info mb-3">
+              <h3 className="about-highlight-heading font-heading fw-bold mb-3">
                 Engineering across the <span className="text-gradient">full technical spectrum</span>
               </h3>
               
               <p className="about-text mb-3">
-                Hello! I'm <strong>Simon Sesuraj W</strong>, a Computer Science postgraduate student based in Trichy, India. I'm currently pursuing my M.Sc. in Computer Science and building practical experience across Full Stack Development, Oracle Database Administration, and Artificial Intelligence & Machine Learning.
+                Hello! I'm <strong>Simon Sesuraj W</strong> (also known as <strong>Simon Sesuraj</strong>), a dedicated <strong>Full Stack Developer</strong> and Computer Science postgraduate based in Trichy, India. I specialize in building modern, high-performance web applications with React & Django, managing enterprise systems with Oracle Database Administration (DBA), and deploying AI & machine learning microservices.
               </p>
 
               <p className="about-text mb-4">

@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://simonsesuraj.vercel.app/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <loc>https://simonwsesuraj.vercel.app/</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://simonwsesuraj.vercel.app/hero.png</image:loc>
+      <image:title>Simon Sesuraj (Simon Sesuraj W) - Full Stack Developer</image:title>
+      <image:caption>Official portfolio and portrait of Simon Sesuraj, Full Stack Developer and Oracle Database Administrator</image:caption>
+    </image:image>
   </url>
 </urlset>

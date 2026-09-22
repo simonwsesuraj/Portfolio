@@ -49,11 +49,12 @@ export default function Hero() {
             {/* Main Heading */}
             <h1 className="hero-title font-heading mb-3">
               Hi, I'm <span className="hero-name-gradient">{personalInfo.name}</span>
+              <span className="hero-alt-name"> (Simon Sesuraj W)</span>
             </h1>
 
             {/* Dynamic Animated Role Subheading */}
             <div className="hero-role-wrapper mb-4">
-              <span className="role-prefix">Focused on </span>
+              <span className="role-prefix">Full Stack Developer · Focused on </span>
               <span className="role-highlight">
                 {personalInfo.titles[activeRoleIndex]}
               </span>
@@ -112,18 +113,20 @@ export default function Hero() {
               <a 
                 href={personalInfo.socials.linkedin} 
                 target="_blank" 
-                rel="noopener noreferrer" 
+                rel="noopener noreferrer me" 
                 className="hero-social-link linkedin"
-                aria-label="LinkedIn Profile"
+                aria-label="Simon Sesuraj LinkedIn Profile"
+                title="Simon Sesuraj on LinkedIn"
               >
                 <FaLinkedin />
               </a>
               <a 
                 href={personalInfo.socials.github} 
                 target="_blank" 
-                rel="noopener noreferrer" 
+                rel="noopener noreferrer me" 
                 className="hero-social-link github"
-                aria-label="GitHub Profile"
+                aria-label="Simon Sesuraj GitHub Profile & Repositories"
+                title="Simon Sesuraj on GitHub (Repositories)"
               >
                 <FaGithub />
               </a>
@@ -132,7 +135,8 @@ export default function Hero() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="hero-social-link whatsapp"
-                aria-label="WhatsApp Chat"
+                aria-label="WhatsApp Chat with Simon Sesuraj"
+                title="Chat with Simon on WhatsApp"
               >
                 <FaWhatsapp />
               </a>

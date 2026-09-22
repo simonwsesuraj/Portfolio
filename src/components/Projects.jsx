@@ -180,12 +180,14 @@ export default function Projects() {
                       )}
 
                       {/* Action Links */}
-                      <div className="project-links-row mt-auto pt-3 border-top border-secondary border-opacity-25">
+                      <div className="project-links-row mt-auto pt-3">
                         <a
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="btn-project-action github"
+                          title={`${project.title} GitHub repository by Simon Sesuraj`}
+                          aria-label={`View ${project.title} source code on Simon Sesuraj GitHub`}
                         >
                           <FaGithub /> Source Code
                         </a>
@@ -196,6 +198,8 @@ export default function Projects() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn-project-action live"
+                            title={`Launch ${project.title} live application`}
+                            aria-label={`Launch ${project.title} live application`}
                           >
                             <FaExternalLinkAlt /> Live Demo
                           </a>
@@ -246,13 +250,13 @@ export default function Projects() {
               </div>
 
               <div className="mb-4">
-                <h5 className="fw-bold text-white mb-2">Overview</h5>
-                <p className="text-muted">{activeModalProject.description}</p>
+                <h5 className="modal-section-title font-heading mb-2">Overview</h5>
+                <p className="modal-desc mb-0">{activeModalProject.description}</p>
               </div>
 
               {activeModalProject.highlights && (
                 <div className="mb-4">
-                  <h5 className="fw-bold text-white mb-2">Technical Highlights & Architecture</h5>
+                  <h5 className="modal-section-title font-heading mb-2">Technical Highlights & Architecture</h5>
                   <ul className="modal-highlights-list">
                     {activeModalProject.highlights.map((item, idx) => (
                       <li key={idx} className="highlight-item">
@@ -265,7 +269,7 @@ export default function Projects() {
               )}
 
               <div className="mb-4">
-                <h5 className="fw-bold text-white mb-2">Technologies Used</h5>
+                <h5 className="modal-section-title font-heading mb-2">Technologies Used</h5>
                 <div className="d-flex flex-wrap gap-2">
                   {activeModalProject.tech.map((t, idx) => (
                     <span key={idx} className="tech-pill py-1 px-3 fs-6">

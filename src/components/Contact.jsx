@@ -77,8 +77,8 @@ export default function Contact() {
               <div className="contact-icon-circle email mb-3">
                 <FaEnvelope size={24} />
               </div>
-              <h5 className="fw-bold text-white mb-1">Email Inquiry</h5>
-              <p className="text-light-emphasis small mb-3">{personalInfo.email}</p>
+              <h5 className="fw-bold contact-title mb-1">Email Inquiry</h5>
+              <p className="contact-subtitle small mb-3">{personalInfo.email}</p>
               <a 
                 href={personalInfo.socials.gmailCompose}
                 target="_blank"
@@ -96,8 +96,8 @@ export default function Contact() {
               <div className="contact-icon-circle whatsapp mb-3">
                 <FaWhatsapp size={24} />
               </div>
-              <h5 className="fw-bold text-white mb-1">Direct Chat</h5>
-              <p className="text-light-emphasis small mb-3">{personalInfo.phone}</p>
+              <h5 className="fw-bold contact-title mb-1">Direct Chat</h5>
+              <p className="contact-subtitle small mb-3">{personalInfo.phone}</p>
               <a 
                 href={`https://wa.me/${personalInfo.whatsappNumber}?text=${encodeURIComponent(personalInfo.whatsappMessage)}`}
                 target="_blank"
@@ -115,8 +115,8 @@ export default function Contact() {
               <div className="contact-icon-circle location mb-3">
                 <FaMapMarkerAlt size={24} />
               </div>
-              <h5 className="fw-bold text-white mb-1">Location & Availability</h5>
-              <p className="text-light-emphasis small mb-2">{personalInfo.location}</p>
+              <h5 className="fw-bold contact-title mb-1">Location & Availability</h5>
+              <p className="contact-subtitle small mb-2">{personalInfo.location}</p>
               <span className="availability-chip">Available for On-site & Remote Roles</span>
             </div>
           </div>
@@ -129,8 +129,8 @@ export default function Contact() {
             <div className="contact-form-card glass-card p-4 p-md-5">
               
               <div className="mb-4 text-center">
-                <h3 className="font-heading fw-bold text-white mb-2">Send a Direct Message</h3>
-                <p className="text-light-emphasis small">  Select an inquiry type to help organize your message</p>
+                <h3 className="font-heading fw-bold form-card-title mb-2">Send a Direct Message</h3>
+                <p className="form-card-subtitle small mb-0">Select an inquiry type to help organize your message</p>
               </div>
 
               {/* Inquiry Intent Selector */}
@@ -236,13 +236,13 @@ export default function Contact() {
         </div>
 
         {/* Footer Section */}
-        <footer className="portfolio-footer mt-5 pt-5 border-top border-secondary border-opacity-25">
+        <footer className="portfolio-footer mt-5 pt-5">
           <div className="d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
             
             <div className="text-center text-md-start">
-              <h5 className="font-heading fw-bold text-white mb-1">{personalInfo.name}</h5>
-              <p className="text-light-emphasis small m-0">
-                Full Stack Developer · Oracle Database Administrator · AI & Machine Learning Developer
+              <h5 className="font-heading fw-bold footer-brand-name mb-1">{personalInfo.name} (Simon Sesuraj W)</h5>
+              <p className="footer-role-text small m-0">
+                Full Stack Developer · Oracle Database Administrator (DBA) · AI & Machine Learning Engineer
               </p>
             </div>
 
@@ -251,18 +251,20 @@ export default function Contact() {
               <a 
                 href={personalInfo.socials.linkedin} 
                 target="_blank" 
-                rel="noopener noreferrer" 
+                rel="noopener noreferrer me" 
                 className="footer-social-link linkedin"
-                aria-label="LinkedIn"
+                aria-label="Simon Sesuraj LinkedIn Profile"
+                title="Simon Sesuraj LinkedIn Profile"
               >
                 <FaLinkedin />
               </a>
               <a 
                 href={personalInfo.socials.github} 
                 target="_blank" 
-                rel="noopener noreferrer" 
+                rel="noopener noreferrer me" 
                 className="footer-social-link github"
-                aria-label="GitHub"
+                aria-label="Simon Sesuraj GitHub Profile & Repositories"
+                title="Simon Sesuraj GitHub Profile & Repositories"
               >
                 <FaGithub />
               </a>
@@ -271,7 +273,8 @@ export default function Contact() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="footer-social-link instagram"
-                aria-label="Instagram"
+                aria-label="Simon Sesuraj Instagram Profile"
+                title="Simon Sesuraj Instagram Profile"
               >
                 <FaInstagram />
               </a>
@@ -288,7 +291,7 @@ export default function Contact() {
 
           </div>
 
-          <div className="text-center mt-4 text-light-emphasis small">
+          <div className="text-center mt-4 footer-copyright small">
             © {new Date().getFullYear()} {personalInfo.name}. Engineered with React, Vite & Modern CSS.
           </div>
         </footer>

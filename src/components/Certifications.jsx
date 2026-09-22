@@ -42,7 +42,7 @@ export default function Certifications() {
         {/* Section Header */}
         <div className="text-center mb-5" data-aos="fade-up">
           <div className="section-badge">Certifications & Training</div>
-          
+          <h2 className="section-title">Certifications & Training</h2>
           <p className="section-subtitle">
             Technical certifications and training programs covering Python, AI, cybersecurity, data science, and blockchain.
           </p>
@@ -116,7 +116,7 @@ export default function Certifications() {
                   )}
 
                   {/* Actions */}
-                  <div className="mt-auto d-flex gap-2 pt-3 border-top border-secondary border-opacity-25">
+                  <div className="mt-auto d-flex gap-2 pt-3 cert-actions-row">
                     <button 
                       className="btn-cert-inspect"
                       onClick={() => setPreviewCert(cert)}
@@ -152,8 +152,8 @@ export default function Certifications() {
             
             <div className="cert-lightbox-header">
               <div>
-                <h4 className="text-white font-heading m-0">{previewCert.title}</h4>
-                <small className="text-muted">{previewCert.issuer} · {previewCert.year}</small>
+                <h4 className="cert-lightbox-title font-heading m-0">{previewCert.title}</h4>
+                <small className="cert-lightbox-sub">{previewCert.issuer} · {previewCert.year}</small>
               </div>
               <button 
                 className="modal-close-btn"

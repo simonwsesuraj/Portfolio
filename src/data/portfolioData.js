@@ -7,9 +7,9 @@ export const personalInfo = {
     "Oracle Database Administrator (DBA)",
     "AI & Machine Learning Developer"
   ],
-  headline: "Computer Science Postgraduate | Full Stack | Oracle DBA | AI & ML",
-  bio: "Computer Science postgraduate student building practical solutions across full-stack web development, Oracle database administration, and artificial intelligence and machine learning using Python and modern development tools.",
-  shortBio:  "Building full-stack applications, working with Oracle database administration, and developing practical AI and machine learning solutions.",
+  headline: "Simon Sesuraj (Simon Sesuraj W) | Full Stack Developer · Oracle DBA · AI & ML",
+  bio: "Simon Sesuraj (Simon Sesuraj W) is a Full Stack Developer and Computer Science postgraduate building production-ready web applications with React & Django, enterprise database architectures with Oracle 19c/21c DBA, and machine learning solutions with Python & FastAPI.",
+  shortBio: "Full Stack Developer (React & Django), Oracle Database Administrator, and AI/ML Engineer.",
   location: "Trichy, Tamil Nadu, India",
   email: "simonwsesuraj@gmail.com",
   phone: "+91 9597964813",
