@@ -48,7 +48,10 @@ export default function Hero() {
 
             {/* Main Heading */}
             <h1 className="hero-title font-heading mb-3">
-              Hi, I'm <span className="hero-name-gradient">{personalInfo.name}</span>
+              Hi, I'm{" "}
+              <span className="hero-name-gradient">
+                {personalInfo.name}
+              </span>
             </h1>
 
             {/* Dynamic Animated Role Subheading */}
