@@ -1,46 +1,113 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
+/* =========================================
+   1. GLOBAL DESIGN VARIABLES
+========================================= */
+
 :root {
+  /* Typography */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  /* Professional Light Theme Colors */
+  /* Backgrounds */
   --bg-primary: #f8fafc;
   --bg-secondary: #ffffff;
   --bg-subtle: #f1f5f9;
   --bg-card: #ffffff;
   --bg-card-hover: #ffffff;
+
+  /* Borders */
   --border-subtle: #e2e8f0;
   --border-strong: #cbd5e1;
   --border-accent: #bfdbfe;
 
-  /* Accents */
+  /* Primary Brand Color */
   --color-primary: #2563eb;
   --color-primary-hover: #1d4ed8;
-  --color-sky: #0284c7;
-  --color-cyan: #0891b2;
-  --color-violet: #7c3aed;
-  --color-purple: #9333ea;
-  --color-emerald: #059669;
-  --color-amber: #d97706;
+  --color-primary-light: #eff6ff;
 
-  /* Typography */
+  /* Specialization Colors */
+  --color-sky: #0284c7;
+  --color-amber: #d97706;
+  --color-emerald: #059669;
+
+  /* Typography Colors */
   --text-main: #0f172a;
   --text-body: #334155;
   --text-muted: #64748b;
   --text-dim: #94a3b8;
 
   /* Gradients */
-  --grad-primary: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #4338ca 100%);
-  --grad-accent: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
-  --grad-surface: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-  --grad-dba: linear-gradient(135deg, #b45309 0%, #d97706 100%);
-  --grad-ai: linear-gradient(135deg, #047857 0%, #059669 100%);
-  --grad-fullstack: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+  --grad-primary: linear-gradient(
+    135deg,
+    #1d4ed8 0%,
+    #2563eb 55%,
+    #4338ca 100%
+  );
+
+  --grad-accent: linear-gradient(
+    135deg,
+    #0284c7 0%,
+    #2563eb 100%
+  );
+
+  --grad-surface: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f8fafc 100%
+  );
+
+  --grad-fullstack: linear-gradient(
+    135deg,
+    #1d4ed8 0%,
+    #2563eb 100%
+  );
+
+  --grad-dba: linear-gradient(
+    135deg,
+    #b45309 0%,
+    #d97706 100%
+  );
+
+  --grad-ai: linear-gradient(
+    135deg,
+    #047857 0%,
+    #059669 100%
+  );
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+
+  --shadow-md: 0 6px 18px rgba(15, 23, 42, 0.06);
+
+  --shadow-lg: 0 12px 28px rgba(15, 23, 42, 0.08);
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Layout */
+  --container-width: 1200px;
+  --header-height: 80px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
 }
 
-* {
+
+/* =========================================
+   2. RESET
+========================================= */
+
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -48,177 +115,461 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: var(--header-height);
 }
 
 body {
+  min-height: 100vh;
   font-family: var(--font-sans);
   background-color: var(--bg-primary);
   color: var(--text-body);
-  overflow-x: hidden;
   line-height: 1.65;
+  overflow-x: hidden;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6, .font-heading {
-  font-family: var(--font-heading);
-  letter-spacing: -0.02em;
-  color: var(--text-main);
+img {
+  display: block;
+  max-width: 100%;
 }
 
-code, pre, .font-mono {
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style-position: inside;
+}
+
+code,
+pre,
+.font-mono {
   font-family: var(--font-mono);
 }
 
-/* Background Ambient Lighting */
+
+/* =========================================
+   3. TYPOGRAPHY
+========================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-heading {
+  font-family: var(--font-heading);
+  color: var(--text-main);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  font-size: clamp(2.3rem, 5vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(1.9rem, 4vw, 2.5rem);
+}
+
+h3 {
+  font-size: 1.35rem;
+}
+
+p {
+  color: var(--text-body);
+}
+
+
+/* =========================================
+   4. BACKGROUND AMBIENT LIGHTING
+========================================= */
+
 .ambient-glow {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  inset: 0;
   height: 100vh;
   pointer-events: none;
   z-index: 0;
-  background: 
-    radial-gradient(circle at 10% 12%, rgba(37, 99, 235, 0.05) 0%, transparent 45%),
-    radial-gradient(circle at 90% 20%, rgba(124, 58, 237, 0.04) 0%, transparent 45%),
-    radial-gradient(circle at 50% 80%, rgba(5, 150, 105, 0.03) 0%, transparent 50%);
+
+  background:
+    radial-gradient(
+      circle at 10% 12%,
+      rgba(37, 99, 235, 0.045) 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(124, 58, 237, 0.035) 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 50% 80%,
+      rgba(5, 150, 105, 0.025) 0%,
+      transparent 50%
+    );
 }
 
-/* Common Section Layout */
-section {
+
+/* =========================================
+   5. COMMON SECTION LAYOUT
+========================================= */
+
+section[id] {
   position: relative;
   z-index: 1;
   padding: 90px 0;
+  scroll-margin-top: var(--header-height);
+}
+
+.section-container {
+  width: min(100% - 40px, var(--container-width));
+  margin-inline: auto;
 }
 
 @media (max-width: 768px) {
-  section {
-    padding: 60px 0;
+  section[id] {
+    padding: 65px 0;
+  }
+
+  .section-container {
+    width: min(100% - 30px, var(--container-width));
   }
 }
 
-/* Section Header Typography */
+
+/* =========================================
+   6. SECTION HEADINGS
+========================================= */
+
+.section-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
 .section-badge {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  font-size: 0.78rem;
+
+  padding: 6px 14px;
+  margin-bottom: 14px;
+
+  font-size: 0.76rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  padding: 6px 14px;
-  border-radius: 9999px;
-  background: #eff6ff;
-  color: #1d4ed8;
-  border: 1px solid #bfdbfe;
-  margin-bottom: 14px;
+
+  color: var(--color-primary-hover);
+  background: var(--color-primary-light);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-full);
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 4vw, 2.6rem);
   font-weight: 800;
   color: var(--text-main);
   margin-bottom: 12px;
-  letter-spacing: -0.03em;
-}
-
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 2rem;
-  }
+  letter-spacing: -0.035em;
 }
 
 .section-subtitle {
-  color: var(--text-muted);
-  font-size: 1.05rem;
   max-width: 650px;
   margin: 0 auto;
-  line-height: 1.6;
+
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.75;
 }
 
-/* Text Gradients */
+@media (max-width: 576px) {
+  .section-header {
+    margin-bottom: 32px;
+  }
+
+  .section-title {
+    font-size: 1.9rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.93rem;
+  }
+}
+
+
+/* =========================================
+   7. TEXT GRADIENTS
+========================================= */
+
 .text-gradient {
+  display: inline-block;
   background: var(--grad-primary);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: inline-block;
 }
 
 .text-gradient-cyan {
-  background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+  display: inline-block;
+  background: var(--grad-accent);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-emerald {
+  display: inline-block;
   background: var(--grad-ai);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-amber {
+  display: inline-block;
   background: var(--grad-dba);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Clean Professional Card System */
+
+/* =========================================
+   8. PROFESSIONAL CARD SYSTEM
+========================================= */
+
 .glass-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 16px;
-  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -2px rgba(15, 23, 42, 0.03);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal),
+    border-color var(--transition-normal);
 }
 
 .glass-card:hover {
-  border-color: var(--border-strong);
-  transform: translateY(-4px);
-  box-shadow: 0 16px 32px -4px rgba(15, 23, 42, 0.09), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+  background: var(--bg-card-hover);
+  border-color: var(--border-accent);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
 }
 
-/* Recruiter Role Pills / Filter Tabs */
+
+/* =========================================
+   9. SPECIALIZATION COLORS
+========================================= */
+
+.color-fullstack {
+  color: var(--color-primary);
+}
+
+.color-dba {
+  color: var(--color-amber);
+}
+
+.color-ai {
+  color: var(--color-emerald);
+}
+
+.bg-fullstack {
+  background: #eff6ff;
+}
+
+.bg-dba {
+  background: #fffbeb;
+}
+
+.bg-ai {
+  background: #ecfdf5;
+}
+
+.border-fullstack {
+  border-color: #bfdbfe;
+}
+
+.border-dba {
+  border-color: #fde68a;
+}
+
+.border-ai {
+  border-color: #a7f3d0;
+}
+
+
+/* =========================================
+   10. BUTTON SYSTEM
+========================================= */
+
+.btn-primary-custom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  padding: 12px 24px;
+
+  color: #ffffff;
+  background: var(--color-primary);
+
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-md);
+
+  font-size: 0.93rem;
+  font-weight: 600;
+
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.btn-primary-custom:hover {
+  color: #ffffff;
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(37, 99, 235, 0.2);
+}
+
+.btn-outline-custom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  padding: 12px 24px;
+
+  color: var(--text-main);
+  background: #ffffff;
+
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+
+  font-size: 0.93rem;
+  font-weight: 600;
+
+  transition: var(--transition-fast);
+}
+
+.btn-outline-custom:hover {
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  border-color: var(--border-accent);
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   11. ROLE PILLS / FILTER TABS
+========================================= */
+
 .role-pills-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  align-items: center;
   justify-content: center;
+  gap: 10px;
   margin-bottom: 35px;
 }
 
 .role-pill {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 9px 20px;
-  font-size: 0.9rem;
+
+  padding: 9px 19px;
+
+  font-size: 0.88rem;
   font-weight: 600;
-  border-radius: 9999px;
-  cursor: pointer;
-  background: #ffffff;
+
   color: #475569;
+  background: #ffffff;
+
   border: 1px solid var(--border-subtle);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-  transition: all 0.25s ease;
+  border-radius: var(--radius-full);
+
+  box-shadow: var(--shadow-sm);
+
+  cursor: pointer;
   user-select: none;
+
+  transition:
+    color var(--transition-fast),
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .role-pill:hover {
   color: var(--text-main);
+  background: var(--bg-subtle);
   border-color: var(--border-strong);
-  background: #f8fafc;
 }
 
 .role-pill.active {
-  color: #1d4ed8;
-  background: #eff6ff;
+  color: var(--color-primary-hover);
+  background: var(--color-primary-light);
   border-color: #93c5fd;
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
 }
 
-/* Custom Scrollbar */
+
+/* =========================================
+   12. FORM ELEMENTS
+========================================= */
+
+.form-control,
+.form-select {
+  min-height: 46px;
+  color: var(--text-main);
+  background-color: #ffffff;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  font-size: 0.94rem;
+  box-shadow: none;
+}
+
+.form-control:focus,
+.form-select:focus {
+  color: var(--text-main);
+  background-color: #ffffff;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-control::placeholder {
+  color: var(--text-dim);
+}
+
+
+/* =========================================
+   13. CUSTOM SCROLLBAR
+========================================= */
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -229,39 +580,108 @@ section {
 
 ::-webkit-scrollbar-thumb {
   background: #cbd5e1;
-  border-radius: 4px;
+  border-radius: var(--radius-full);
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
 
-/* Toast Notification */
+
+/* =========================================
+   14. TOAST NOTIFICATION
+========================================= */
+
 .custom-toast {
   position: fixed;
-  bottom: 25px;
   right: 25px;
-  background: #ffffff;
-  border: 1px solid var(--border-subtle);
-  border-left: 4px solid var(--color-emerald);
-  color: var(--text-main);
-  padding: 12px 20px;
-  border-radius: 12px;
+  bottom: 25px;
+  z-index: 9999;
+
   display: flex;
   align-items: center;
   gap: 10px;
+
+  max-width: min(400px, calc(100vw - 30px));
+
+  padding: 13px 20px;
+
+  color: var(--text-main);
+  background: #ffffff;
+
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid var(--color-emerald);
+  border-radius: var(--radius-md);
+
   box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
-  z-index: 9999;
+
   animation: slideInUp 0.3s ease;
 }
 
 @keyframes slideInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(15px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+
+/* =========================================
+   15. FOCUS ACCESSIBILITY
+========================================= */
+
+:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.45);
+  outline-offset: 3px;
+}
+
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible) {
+  outline: none;
+}
+
+
+/* =========================================
+   16. RESPONSIVE UTILITIES
+========================================= */
+
+@media (max-width: 768px) {
+  .glass-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .role-pills-container {
+    gap: 8px;
+  }
+
+  .role-pill {
+    padding: 8px 15px;
+    font-size: 0.83rem;
+  }
+
+  .custom-toast {
+    right: 15px;
+    bottom: 15px;
+  }
+}
+
+
+/* =========================================
+   17. REDUCED MOTION ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

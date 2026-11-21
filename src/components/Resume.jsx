@@ -1,195 +1,228 @@
+
 import { useState } from "react";
-import { personalInfo, skillsData, education } from "../data/portfolioData";
-import { 
-  FaFileDownload, 
-  FaGraduationCap, 
-  FaBriefcase, 
-  FaCode, 
-  FaDatabase, 
-  FaBrain, 
-  FaTools,
-  FaCheckCircle
+import {
+  personalInfo,
+  skillsData,
+  education
+} from "../data/portfolioData";
+
+import {
+  FaFileDownload,
+  FaGraduationCap,
+  FaBriefcase,
+  FaCode,
+  FaDatabase,
+  FaBrain,
+  FaTools
 } from "react-icons/fa";
-import './Resume.css';
+
+import "./Resume.css";
+
+const skillCategories = [
+  { id: "all", label: "All Skills", icon: <FaCode /> },
+  { id: "fullstack", label: "Full Stack", icon: <FaCode /> },
+  { id: "dba", label: "Oracle DBA", icon: <FaDatabase /> },
+  { id: "ai", label: "AI & ML", icon: <FaBrain /> },
+  { id: "tools", label: "Tools", icon: <FaTools /> }
+];
+
+const skillGroups = [
+  { id: "fullstack", title: "Full Stack Development" },
+  { id: "dba", title: "Oracle Database Administration" },
+  { id: "ai", title: "AI & Machine Learning" },
+  { id: "tools", title: "Tools & Technologies" }
+];
 
 export default function Resume() {
-  const [activeSkillCategory, setActiveSkillCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState("all");
 
-  const skillTabs = [
-    { id: "all", label: "All Skills", icon: <FaCode /> },
-    { id: "fullstack", label: "Full Stack", icon: <FaCode /> },
-    { id: "dba", label: "Oracle DBA", icon: <FaDatabase /> },
-    { id: "ai", label: "AI & ML", icon: <FaBrain /> },
-    { id: "tools", label: "Tools & DevOps", icon: <FaTools /> }
-  ];
-
-  const getFilteredSkills = () => {
-    if (activeSkillCategory === "all") {
-      return [
-        ...skillsData.fullstack.map(s => ({ ...s, group: "Full Stack" })),
-        ...skillsData.dba.map(s => ({ ...s, group: "Oracle DBA" })),
-        ...skillsData.ai.map(s => ({ ...s, group: "AI & ML" })),
-        ...skillsData.tools.map(s => ({ ...s, group: "Tools & DevOps" }))
-      ];
-    }
-    return skillsData[activeSkillCategory] || [];
-  };
-
-  const currentSkills = getFilteredSkills();
+  const visibleGroups =
+    activeCategory === "all"
+      ? skillGroups
+      : skillGroups.filter((group) => group.id === activeCategory);
 
   return (
     <section className="resume-section" id="resume">
       <div className="container">
-        
-        {/* Section Header */}
-        <div className="text-center mb-5" data-aos="fade-up">
-          <div className="section-badge">Skills & Qualifications</div>
-          <h2 className="section-title">Skills & Qualifications</h2>
-          <p className="section-subtitle">
-            Comprehensive breakdown of software proficiencies, enterprise database competencies, and academic background.
+
+        {/* Section Heading */}
+        <div className="resume-heading text-center" data-aos="fade-up">
+          <span className="resume-eyebrow">MY BACKGROUND</span>
+
+          <h2 className="section-title">Resume</h2>
+
+          <p className="resume-subtitle">
+            My academic background, practical training, and technical skills.
           </p>
 
-          <div className="mt-4">
-            <a
-              href={personalInfo.resumePdf}
-              download="Simon_Sesuraj_Resume.pdf"
-              className="btn-download-resume"
-              title="Download Full Resume PDF"
-            >
-              <FaFileDownload className="me-2" /> Download Complete Resume
-            </a>
-          </div>
+          <a
+            href={personalInfo.resumePdf}
+            download="Simon_Sesuraj_Resume.pdf"
+            className="btn-download-resume"
+          >
+            <FaFileDownload />
+            <span>Download Resume</span>
+          </a>
         </div>
 
-        {/* Education & Experience Timeline Grid */}
-        <div className="row g-4 mb-5">
-          
-          {/* Education Column */}
-          <div className="col-12 col-lg-6" data-aos="fade-right">
-            <div className="timeline-card glass-card p-4 h-100">
-              <div className="d-flex align-items-center gap-3 mb-4">
-                <div className="timeline-header-icon education">
-                  <FaGraduationCap size={22} />
+        {/* Education and Internship */}
+        <div className="row g-4 resume-overview">
+
+          {/* Education */}
+          <div className="col-12 col-lg-7" data-aos="fade-up">
+            <div className="resume-card h-100">
+
+              <div className="resume-card-heading">
+                <div className="resume-icon education-icon">
+                  <FaGraduationCap />
                 </div>
+
                 <div>
-                  <h3 className="timeline-section-title m-0">Academic Qualifications</h3>
-                  <small className="timeline-subtitle">Degree & Academic Performance</small>
+                  <h3>Education</h3>
+                  <p>Academic qualifications</p>
                 </div>
               </div>
 
-              <div className="timeline-container">
+              <div className="education-timeline">
                 {education.map((item, index) => (
-                  <div key={index} className="timeline-item">
-                    <div className="timeline-dot"></div>
-                    <div className="timeline-content">
-                      <div className="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-1">
-                        <h4 className="timeline-title m-0">{item.degree}</h4>
-                        <span className="timeline-badge-score">{item.score}</span>
+                  <div className="education-item" key={index}>
+                    <div className="education-dot"></div>
+
+                    <div className="education-content">
+                      <div className="education-top">
+                        <h4>{item.degree}</h4>
+
+                        {item.score && (
+                          <span className="education-score">
+                            {item.score}
+                          </span>
+                        )}
                       </div>
-                      <div className="timeline-institution mb-2">{item.institution}</div>
-                      <div className="timeline-date mb-2">{item.duration}</div>
-                      <p className="timeline-details m-0">{item.highlights}</p>
+
+                      <p className="education-institution">
+                        {item.institution}
+                      </p>
+
+                      <span className="education-duration">
+                        {item.duration}
+                      </span>
+
+                      {item.highlights && (
+                        <p className="education-description">
+                          {item.highlights}
+                        </p>
+                      )}
                     </div>
                   </div>
                 ))}
               </div>
+
             </div>
           </div>
 
-          {/* Practical Focus & Highlights Column */}
-          <div className="col-12 col-lg-6" data-aos="fade-left">
-            <div className="timeline-card glass-card p-4 h-100">
-              <div className="d-flex align-items-center gap-3 mb-4">
-                <div className="timeline-header-icon experience">
-                  <FaBriefcase size={22} />
+          {/* Practical Training */}
+          <div className="col-12 col-lg-5" data-aos="fade-up">
+            <div className="resume-card h-100">
+
+              <div className="resume-card-heading">
+                <div className="resume-icon experience-icon">
+                  <FaBriefcase />
                 </div>
+
                 <div>
-                  <h3 className="timeline-section-title m-0">Core Competencies</h3>
-                  <small className="timeline-subtitle">Recruiter Focus Areas</small>
+                  <h3>Practical Training</h3>
+                  <p>Industry exposure</p>
                 </div>
               </div>
 
-              <div className="key-competency-list d-flex flex-column gap-3">
-                <div className="competency-box">
-                  <div className="d-flex align-items-center gap-2 mb-1">
-                    <FaCheckCircle className="text-cyan" />
-                    <h5 className="m-0 competency-title fw-bold">Full Stack Web Architecture</h5>
-                  </div>
-                  <p className="competency-desc small m-0 ps-4">
-                    Experienced in building responsive frontend interfaces with React, coupled with Django/Python REST backends and database integration.
-                  </p>
-                </div>
+              <div className="internship-content">
+                <span className="internship-label">
+                  30-Day Internship
+                </span>
 
-                <div className="competency-box">
-                  <div className="d-flex align-items-center gap-2 mb-1">
-                    <FaCheckCircle className="text-amber" />
-                    <h5 className="m-0 competency-title fw-bold">Enterprise Oracle Administration</h5>
-                  </div>
-                  <p className="competency-desc small m-0 ps-4">
-                    Trained in Oracle database architecture, SQL, schema design, users and privileges, tablespaces, listener configuration, backup and recovery, RMAN, and Data Guard fundamentals.
-                  </p>
-                </div>
+                <h4>Oracle Database Administration</h4>
 
-                <div className="competency-box">
-                  <div className="d-flex align-items-center gap-2 mb-1">
-                    <FaCheckCircle className="text-emerald" />
-                    <h5 className="m-0 competency-title fw-bold">Machine Learning & Microservices</h5>
-                  </div>
-                  <p className="competency-desc small m-0 ps-4">
-                    Experienced in building predictive models with Scikit-learn, preparing and analyzing datasets with Pandas and NumPy, and creating REST APIs for machine learning models using FastAPI.
-                  </p>
+                <p className="internship-company">
+                  Snow Leaf Solutions Pvt Ltd
+                </p>
+
+                <p className="internship-description">
+                  Gained practical exposure to Oracle database
+                  administration and Linux-based database operations.
+                </p>
+
+                <div className="internship-topics">
+                  <span>Oracle Database</span>
+                  <span>SQL</span>
+                  <span>Linux</span>
+                  <span>Tablespaces</span>
+                  <span>RMAN</span>
+                  <span>Backup & Recovery</span>
+                  <span>Data Guard</span>
                 </div>
               </div>
+
             </div>
           </div>
 
         </div>
 
-        {/* Interactive Skills Matrix */}
-        <div className="skills-matrix-wrap glass-card p-4 p-md-5" data-aos="fade-up">
-          <div className="text-center mb-4">
-            <h3 className="font-heading fw-bold skills-matrix-title mb-2">Technical Proficiency Matrix</h3>
-            <p className="skills-matrix-subtitle small mb-0">Select a domain to inspect specific tools and framework proficiencies</p>
+        {/* Technical Skills */}
+        <div className="resume-skills-card" data-aos="fade-up">
+
+          <div className="skills-heading text-center">
+            <span className="resume-eyebrow">WHAT I WORK WITH</span>
+
+            <h3>Technical Skills</h3>
+
+            <p>
+              Technologies and tools across my areas of interest.
+            </p>
           </div>
 
-          {/* Skill Filter Tabs */}
-          <div className="role-pills-container mb-4">
-            {skillTabs.map((tab) => (
+          {/* Skill Filters */}
+          <div className="skills-filter">
+            {skillCategories.map((category) => (
               <button
-                key={tab.id}
-                className={`role-pill ${activeSkillCategory === tab.id ? "active" : ""}`}
-                onClick={() => setActiveSkillCategory(tab.id)}
+                key={category.id}
+                type="button"
+                className={`skill-filter-btn ${
+                  activeCategory === category.id ? "active" : ""
+                }`}
+                onClick={() => setActiveCategory(category.id)}
+                aria-pressed={activeCategory === category.id}
               >
-                {tab.icon}
-                <span>{tab.label}</span>
+                {category.icon}
+                <span>{category.label}</span>
               </button>
             ))}
           </div>
 
-          {/* Skills Grid */}
-          <div className="row g-3">
-            {currentSkills.map((skill, index) => (
-              <div key={index} className="col-12 col-md-6 col-lg-4">
-                <div className="skill-meter-card p-3 rounded-3">
-                  <div className="d-flex justify-content-between align-items-center mb-2">
-                    <span className="skill-title fw-bold">{skill.name}</span>
-                    <span className="skill-percentage font-mono">{skill.level}%</span>
-                  </div>
+          {/* Skill Groups */}
+          <div className="skills-groups">
+            {visibleGroups.map((group) => {
+              const skills = skillsData[group.id] || [];
 
-                  <div className="skill-track mb-2">
-                    <div
-                      className="skill-bar-fill"
-                      style={{ width: `${skill.level}%` }}
-                    ></div>
-                  </div>
+              if (skills.length === 0) return null;
 
-                  {skill.desc && (
-                    <div className="skill-desc-text small">{skill.desc}</div>
-                  )}
+              return (
+                <div className="skill-group" key={group.id}>
+                  <h4>{group.title}</h4>
+
+                  <div className="skill-tags">
+                    {skills.map((skill, index) => (
+                      <span className="skill-tag" key={index}>
+                        {typeof skill === "string"
+                          ? skill
+                          : skill.name}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
+
         </div>
 
       </div>

@@ -1,141 +1,188 @@
-import { FaCode, FaDatabase, FaBrain, FaGraduationCap, FaCheckCircle } from "react-icons/fa";
-import './About.css';
+
+import {
+  FaCode,
+  FaDatabase,
+  FaBrain,
+  FaGraduationCap,
+  FaArrowRight
+} from "react-icons/fa";
+
+import "./About.css";
 
 export default function About() {
   const pillars = [
     {
       id: "fullstack",
-      title: "Full Stack Engineering",
-      icon: <FaCode className="pillar-card-icon text-cyan" />,
-      tagline: "Scalable Web Applications",
-      tech: "React · Django · REST APIs · Bootstrap",
-      points: [
-        "Responsive, component-driven frontend architecture with clean state patterns",
-        "RESTful APIs using Django REST Framework, ORM, and JWT authentication",
-        "Performance optimization, responsive design, and mobile-first layouts"
-      ]
+      title: "Full Stack Development",
+      subtitle: "Building web applications",
+      icon: <FaCode />,
+      color: "fullstack",
+      technologies: ["React", "Django", "REST APIs", "Bootstrap"],
+      description:
+        "Developing responsive user interfaces and backend services, connecting frontend applications with REST APIs and databases."
     },
-   {
+    {
       id: "dba",
       title: "Oracle Database Administration",
-      icon: <FaDatabase className="pillar-card-icon text-amber" />,
-      tagline: "Enterprise Relational Systems",
-      tech: "Oracle 19c/21c · SQL · Linux · RMAN · Data Guard",
-      points: [
-        "Oracle Database architecture, SGA components, background processes, and database instance management",
-        "Database creation, startup and shutdown, tablespaces, datafiles, and storage administration",
-        "SQL, user management, privileges, listener configuration, users, roles, privileges, listener configuration, and basic database administration",
-        "Cold backup, hot backup, RMAN backup and recovery, and database recovery procedures",
-        "Foundational Oracle Data Guard concepts and Linux-based Oracle Database administration"
-      ]
+      subtitle: "Database management and operations",
+      icon: <FaDatabase />,
+      color: "dba",
+      technologies: ["Oracle 19c/21c", "SQL", "Linux", "RMAN"],
+      description:
+        "Working with Oracle database architecture, instance management, storage administration, backup and recovery, and Data Guard fundamentals."
     },
     {
       id: "ai",
-      title: "Artificial Intelligence & ML",
-      icon: <FaBrain className="pillar-card-icon text-emerald" />,
-      tagline: "Predictive Analytics & Microservices",
-      tech: "FastAPI · Scikit-learn · Pandas · Python",
-      points: [
-        "End-to-end ML model pipelines from exploratory data analysis to inference",
-        "REST APIs for serving machine learning models using FastAPI and Swagger/OpenAPI",
-        "Data wrangling, regression, classification, and statistical evaluation"
-      ]
+      title: "AI & Machine Learning",
+      subtitle: "Practical data-driven solutions",
+      icon: <FaBrain />,
+      color: "ai",
+      technologies: ["Python", "Scikit-learn", "Pandas", "FastAPI"],
+      description:
+        "Building practical machine learning workflows, preparing datasets, exploring predictive models, and developing APIs for model integration."
     }
   ];
 
   return (
     <section className="about-section" id="about">
       <div className="container">
-        
-        {/* Section Header */}
-        <div className="text-center mb-5" data-aos="fade-up">
-          <div className="section-badge">Professional Background</div>
-          <h2 className="section-title">About Me</h2>
-          <p className="section-subtitle">
-            Building practical solutions across full-stack web development, Oracle database administration, and artificial intelligence and machine learning.
+
+        {/* Section heading */}
+        <div className="about-heading" data-aos="fade-up">
+          <span className="about-eyebrow">GET TO KNOW ME</span>
+
+          <h2 className="about-section-title">
+            About <span>Me</span>
+          </h2>
+
+          <p className="about-section-description">
+            A Computer Science postgraduate interested in building
+            useful software, working with databases, and exploring
+            practical applications of AI and Machine Learning.
           </p>
         </div>
 
-        <div className="row g-4 align-items-center mb-5">
-          
-          {/* Left: Summary & Philosophy */}
-          <div className="col-12 col-lg-6" data-aos="fade-right">
-            <div className="about-bio-card glass-card p-4 p-md-5">
-              <h3 className="about-highlight-heading font-heading fw-bold mb-3">
-                Engineering across the <span className="text-gradient">full technical spectrum</span>
+        <div className="row g-4 align-items-stretch">
+
+          {/* Professional introduction */}
+          <div className="col-12 col-lg-5" data-aos="fade-right">
+            <div className="about-intro-card h-100">
+
+              <span className="about-card-label">
+                PROFESSIONAL PROFILE
+              </span>
+
+              <h3 className="about-intro-title">
+                Turning ideas into
+                <span> practical technology solutions.</span>
               </h3>
-              
-              <p className="about-text mb-3">
-                Hello! I'm <strong>Simon Sesuraj W</strong> (also known as <strong>Simon Sesuraj</strong>), a dedicated <strong>Full Stack Developer</strong> and Computer Science postgraduate based in Trichy, India. I specialize in building modern, high-performance web applications with React & Django, managing enterprise systems with Oracle Database Administration (DBA), and deploying AI & machine learning microservices.
+
+              <p className="about-intro-text">
+                I'm Simon Sesuraj, a Computer Science postgraduate
+                based in Trichy, India. I enjoy developing applications
+                and understanding how the systems behind them work.
               </p>
 
-              <p className="about-text mb-4">
-               My current focus spans
-              <strong> frontend and backend web development</strong>,
-              a strong foundation in
-              <strong> Oracle databases and SQL</strong>,
-              and practical experience building
-              <strong> AI and machine learning solutions</strong>
-              with Python and FastAPI.
+              <p className="about-intro-text">
+                My technical interests span full stack development
+                with React and Django, Oracle database administration,
+                and Python-based AI and Machine Learning projects.
+                I focus on strengthening my fundamentals through
+                hands-on learning and practical projects.
               </p>
-     
-              <div className="about-credentials-box p-3 rounded-3 mb-4">
-                <div className="d-flex align-items-center gap-3">
-                  <div className="cred-icon-wrap">
-                    <FaGraduationCap size={22} className="text-cyan" />
-                  </div>
-                  <div>
-                    <div className="cred-title">St. Joseph's College (Autonomous), Trichy</div>
-                    <div className="cred-sub">M.Sc Computer Science (CGPA: 8.64) · B.Sc Computer Science (CGPA: 7.14)</div>
-                  </div>
+
+              {/* Education */}
+              <div className="about-education">
+                <div className="about-education-icon">
+                  <FaGraduationCap />
+                </div>
+
+                <div>
+                  <span className="about-education-label">
+                    EDUCATION
+                  </span>
+
+                  <h4>St. Joseph's College (Autonomous)</h4>
+
+                  <p>
+                    M.Sc. Computer Science · 2025–2027
+                  </p>
+
+                  <p>
+                    B.Sc. Computer Science · 2022–2025
+                  </p>
                 </div>
               </div>
 
-              <div className="d-flex flex-wrap gap-3">
-                <a href="#projects" className="btn-about-action">
-                  View Case Studies
+              {/* Action links */}
+              <div className="about-actions">
+                <a href="#projects" className="about-primary-btn">
+                  Explore Projects
+                  <FaArrowRight />
                 </a>
-                <a href="#contact" className="btn-about-outline">
-                  Let's Discuss Opportunities
+
+                <a href="#contact" className="about-secondary-btn">
+                  Contact Me
                 </a>
               </div>
+
             </div>
           </div>
 
-          {/* Right: 3 Pillars Grid */}
-          <div className="col-12 col-lg-6" data-aos="fade-left">
-            <div className="d-flex flex-column gap-3">
-              {pillars.map((pillar) => (
-                <div key={pillar.id} className="pillar-detail-card glass-card p-4">
-                  <div className="d-flex align-items-center justify-content-between mb-2">
-                    <div className="d-flex align-items-center gap-3">
-                      {pillar.icon}
+          {/* Specialization cards */}
+          <div className="col-12 col-lg-7" data-aos="fade-left">
+            <div className="about-specializations">
+
+              <div className="about-specializations-heading">
+                <span>WHAT I WORK WITH</span>
+                <h3>Areas of Focus</h3>
+              </div>
+
+              {pillars.map((pillar, index) => (
+                <article
+                  className="about-pillar-card"
+                  key={pillar.id}
+                >
+                  <div className={`about-pillar-icon ${pillar.color}`}>
+                    {pillar.icon}
+                  </div>
+
+                  <div className="about-pillar-content">
+
+                    <div className="about-pillar-top">
                       <div>
-                        <h4 className="pillar-title m-0">{pillar.title}</h4>
-                        <span className="pillar-tagline">{pillar.tagline}</span>
+                        <span className="about-pillar-number">
+                          0{index + 1}
+                        </span>
+
+                        <h4>{pillar.title}</h4>
+
+                        <p className="about-pillar-subtitle">
+                          {pillar.subtitle}
+                        </p>
                       </div>
                     </div>
-                  </div>
 
-                  <div className="pillar-tech-badge mb-3">
-                    {pillar.tech}
-                  </div>
+                    <p className="about-pillar-description">
+                      {pillar.description}
+                    </p>
 
-                  <ul className="pillar-points-list m-0 p-0">
-                    {pillar.points.map((pt, i) => (
-                      <li key={i} className="pillar-point-item">
-                        <FaCheckCircle className="point-check" />
-                        <span>{pt}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                    <div className="about-tech-list">
+                      {pillar.technologies.map((technology) => (
+                        <span key={technology}>
+                          {technology}
+                        </span>
+                      ))}
+                    </div>
+
+                  </div>
+                </article>
               ))}
+
             </div>
           </div>
 
         </div>
-
       </div>
     </section>
   );

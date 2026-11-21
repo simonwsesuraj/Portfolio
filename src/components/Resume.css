@@ -1,209 +1,417 @@
+
+/* ==============================
+   RESUME SECTION
+================================ */
+
 .resume-section {
-  background: #ffffff;
-  position: relative;
+  padding: 100px 0;
+  background: #f8fafc;
 }
+
+.resume-heading {
+  max-width: 650px;
+  margin: 0 auto 55px;
+}
+
+.resume-eyebrow {
+  display: inline-block;
+  color: #2563eb;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.resume-subtitle {
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 15px auto 25px;
+}
+
+/* ==============================
+   DOWNLOAD BUTTON
+================================ */
 
 .btn-download-resume {
   display: inline-flex;
   align-items: center;
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 23px;
+  border-radius: 8px;
+  background: #2563eb;
   color: #ffffff;
-  font-weight: 700;
-  font-size: 0.95rem;
-  padding: 13px 28px;
-  border-radius: 10px;
   text-decoration: none;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
-  transition: all 0.25s ease;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: 0.25s ease;
 }
 
 .btn-download-resume:hover {
+  background: #1d4ed8;
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35);
 }
 
-/* Timeline Cards */
-.timeline-card {
-  border-radius: 16px;
+/* ==============================
+   OVERVIEW CARDS
+================================ */
+
+.resume-overview {
+  margin-bottom: 28px;
+}
+
+.resume-card {
+  height: 100%;
+  padding: 28px;
   background: #ffffff;
   border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  transition: border-color 0.25s ease;
 }
 
-.timeline-header-icon {
+.resume-card:hover {
+  border-color: #bfdbfe;
+}
+
+.resume-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.resume-card-heading h3 {
+  color: #0f172a;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.resume-card-heading p {
+  color: #64748b;
+  font-size: 0.82rem;
+  margin: 0;
+}
+
+.resume-icon {
   width: 44px;
   height: 44px;
-  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 10px;
+  font-size: 1.2rem;
 }
 
-.timeline-header-icon.education {
+.education-icon {
+  color: #2563eb;
   background: #eff6ff;
-  color: #1d4ed8;
-  border: 1px solid #bfdbfe;
 }
 
-.timeline-header-icon.experience {
-  background: #f5f3ff;
+.experience-icon {
   color: #7c3aed;
-  border: 1px solid #ddd6fe;
+  background: #f5f3ff;
 }
 
-.timeline-section-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #0f172a;
-}
+/* ==============================
+   EDUCATION TIMELINE
+================================ */
 
-.timeline-subtitle {
-  color: #64748b;
-  font-size: 0.82rem;
-}
-
-.timeline-container {
+.education-timeline {
   position: relative;
-  padding-left: 20px;
+  padding-left: 22px;
   border-left: 2px solid #e2e8f0;
   display: flex;
   flex-direction: column;
-  gap: 28px;
-  margin-top: 10px;
+  gap: 30px;
+  margin-left: 5px;
 }
 
-.timeline-item {
+.education-item {
   position: relative;
 }
 
-.timeline-dot {
+.education-dot {
   position: absolute;
-  left: -27px;
-  top: 4px;
+  left: -29px;
+  top: 5px;
   width: 12px;
   height: 12px;
-  border-radius: 50%;
   background: #2563eb;
   border: 2px solid #ffffff;
+  border-radius: 50%;
   box-shadow: 0 0 0 2px #bfdbfe;
 }
 
-.timeline-title {
+.education-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.education-content h4 {
+  color: #0f172a;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.education-score {
+  color: #047857;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.education-institution {
+  color: #334155;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.education-duration {
+  display: inline-block;
+  color: #64748b;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.education-description {
+  color: #64748b;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==============================
+   INTERNSHIP
+================================ */
+
+.internship-content {
+  padding: 4px 0;
+}
+
+.internship-label {
+  display: inline-block;
+  padding: 5px 10px;
+  color: #6d28d9;
+  background: #f5f3ff;
+  border-radius: 5px;
+  font-size: 0.73rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.internship-content h4 {
+  color: #0f172a;
   font-size: 1.05rem;
   font-weight: 700;
-  color: #0f172a;
+  line-height: 1.5;
+  margin-bottom: 7px;
 }
 
-.timeline-badge-score {
-  font-family: var(--font-mono);
-  font-size: 0.76rem;
-  font-weight: 600;
-  padding: 3px 10px;
-  border-radius: 9999px;
-  background: #ecfdf5;
-  color: #047857;
-  border: 1px solid #a7f3d0;
-}
-
-.timeline-institution {
-  font-size: 0.9rem;
+.internship-company {
   color: #475569;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 13px;
+}
+
+.internship-description {
+  color: #64748b;
+  font-size: 0.86rem;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.internship-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.internship-topics span {
+  padding: 6px 10px;
+  color: #334155;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.74rem;
   font-weight: 500;
 }
 
-.timeline-date {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  color: #64748b;
-}
+/* ==============================
+   TECHNICAL SKILLS
+================================ */
 
-.timeline-details {
-  font-size: 0.88rem;
-  color: #334155;
-  line-height: 1.5;
-}
-
-/* Competency Boxes */
-.competency-box {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 16px;
-  transition: all 0.25s ease;
-}
-
-.competency-box:hover {
+.resume-skills-card {
+  padding: 38px;
   background: #ffffff;
-  border-color: #cbd5e1;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
-  transform: translateX(4px);
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
 }
 
-.competency-title {
+.skills-heading {
+  margin-bottom: 28px;
+}
+
+.skills-heading h3 {
   color: #0f172a;
-  font-size: 0.98rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 8px;
 }
 
-.competency-desc {
+.skills-heading p {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* ==============================
+   SKILL FILTERS
+================================ */
+
+.skills-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 35px;
+}
+
+.skill-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 15px;
+  border: 1px solid #e2e8f0;
+  border-radius: 7px;
+  background: #ffffff;
   color: #475569;
-  line-height: 1.5;
+  font-size: 0.83rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
 }
 
-/* Skills Matrix */
-.skills-matrix-wrap {
-  border-radius: 20px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+.skill-filter-btn:hover {
+  border-color: #93c5fd;
+  color: #2563eb;
 }
 
-.skills-matrix-title {
+.skill-filter-btn.active {
+  color: #ffffff;
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+/* ==============================
+   SKILL GROUPS
+================================ */
+
+.skills-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.skill-group {
+  padding-bottom: 25px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.skill-group:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.skill-group h4 {
   color: #0f172a;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 15px;
 }
 
-.skills-matrix-subtitle {
-  color: #64748b;
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.skill-meter-card {
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 14px;
   background: #f8fafc;
   border: 1px solid #e2e8f0;
-  transition: all 0.25s ease;
+  border-radius: 7px;
+  color: #334155;
+  font-size: 0.84rem;
+  font-weight: 500;
+  transition: 0.2s ease;
 }
 
-.skill-meter-card:hover {
-  background: #ffffff;
-  border-color: #cbd5e1;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
-  transform: translateY(-2px);
-}
-
-.skill-title {
-  font-size: 0.92rem;
-  color: #0f172a;
-}
-
-.skill-percentage {
-  font-size: 0.8rem;
+.skill-tag:hover {
+  background: #eff6ff;
+  border-color: #bfdbfe;
   color: #1d4ed8;
-  font-weight: 600;
 }
 
-.skill-track {
-  width: 100%;
-  height: 6px;
-  background: #e2e8f0;
-  border-radius: 9999px;
-  overflow: hidden;
+/* ==============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 767px) {
+  .resume-section {
+    padding: 75px 0;
+  }
+
+  .resume-heading {
+    margin-bottom: 38px;
+  }
+
+  .resume-card {
+    padding: 22px;
+  }
+
+  .resume-skills-card {
+    padding: 25px 18px;
+  }
+
+  .skills-heading h3 {
+    font-size: 1.35rem;
+  }
+
+  .skills-filter {
+    gap: 8px;
+  }
+
+  .skill-filter-btn {
+    padding: 8px 11px;
+    font-size: 0.78rem;
+  }
+
+  .skill-tag {
+    padding: 8px 11px;
+    font-size: 0.8rem;
+  }
 }
 
-.skill-bar-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #2563eb 0%, #4f46e5 100%);
-  border-radius: 9999px;
-  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.skill-desc-text {
-  font-size: 0.78rem;
-  color: #64748b;
+@media (prefers-reduced-motion: reduce) {
+  .resume-card,
+  .btn-download-resume,
+  .skill-filter-btn,
+  .skill-tag {
+    transition: none;
+  }
 }

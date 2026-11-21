@@ -1,212 +1,454 @@
-import { useState, useEffect } from 'react';
-import { personalInfo } from '../data/portfolioData';
-import { 
-  FaFileDownload, 
-  FaCopy, 
-  FaCheck, 
-  FaGithub, 
-  FaLinkedin, 
-  FaWhatsapp, 
-  FaArrowRight, 
-  FaDatabase, 
-  FaCode, 
-  FaBrain 
+
+import { useState } from "react";
+import { personalInfo } from "../data/portfolioData";
+
+import {
+  FaFileDownload,
+  FaCopy,
+  FaCheck,
+  FaGithub,
+  FaLinkedin,
+  FaWhatsapp,
+  FaArrowRight,
+  FaDatabase,
+  FaCode,
+  FaBrain,
+  FaGraduationCap,
+  FaEnvelope
 } from "react-icons/fa";
-import './Hero.css';
+
+import "./Hero.css";
 
 export default function Hero() {
+
   const [copied, setCopied] = useState(false);
-  const [activeRoleIndex, setActiveRoleIndex] = useState(0);
 
-  // Rotating title
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveRoleIndex((prev) => (prev + 1) % personalInfo.titles.length);
-    }, 2800);
-    return () => clearInterval(timer);
-  }, []);
+  // --------------------------------
+  // COPY EMAIL
+  // --------------------------------
 
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText(personalInfo.email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
+  const handleCopyEmail = async () => {
+
+    try {
+
+      await navigator.clipboard.writeText(personalInfo.email);
+
+      setCopied(true);
+
+      setTimeout(() => {
+        setCopied(false);
+      }, 2000);
+
+    } catch (error) {
+
+      console.error("Unable to copy email:", error);
+
+    }
+
   };
 
+
   return (
+
     <section className="hero-section" id="home">
+
       <div className="container">
+
         <div className="row align-items-center g-5">
-          
-          {/* LEFT CONTENT */}
-          <div className="col-12 col-lg-7 text-center text-lg-start" data-aos="fade-right">
-            
-            {/* Status Badge */}
-            <div className="hero-status-badge mb-3">
+
+          {/* =================================
+              LEFT CONTENT
+          ================================= */}
+
+          <div
+            className="col-12 col-lg-7"
+            data-aos="fade-right"
+          >
+
+            {/* STATUS */}
+
+            <div className="hero-status-badge">
+
               <span className="status-indicator"></span>
-              <span>{personalInfo.statusBadge}</span>
+
+              <span>
+                {personalInfo.statusBadge || "Open to Opportunities"}
+              </span>
+
             </div>
 
-            {/* Main Heading */}
-            <h1 className="hero-title font-heading mb-3">
-              Hi, I'm{" "}
-              <span className="hero-name-gradient">
-                {personalInfo.name}
-              </span>
-            </h1>
 
-            {/* Dynamic Animated Role Subheading */}
-            <div className="hero-role-wrapper mb-4">
-              <span className="role-prefix">Full Stack Developer · Focused on </span>
-              <span className="role-highlight">
-                {personalInfo.titles[activeRoleIndex]}
-              </span>
-            </div>
+            {/* INTRODUCTION */}
 
-            {/* Bio summary */}
-            <p className="hero-bio mb-4">
-              {personalInfo.bio}
+            <p className="hero-intro">
+              HELLO, I'M
             </p>
 
-            {/* Three Core Competency Chips */}
-            <div className="hero-pillars-row mb-4">
-              <div className="pillar-chip">
-                <FaCode className="pillar-icon text-cyan" />
-                <span>Full Stack (React & Django)</span>
-              </div>
-              <div className="pillar-chip">
-                <FaDatabase className="pillar-icon text-amber" />
-                <span>Oracle DBA (SQL)</span>
-              </div>
-              <div className="pillar-chip">
-                <FaBrain className="pillar-icon text-emerald" />
-                <span>AI & ML (Python/Scikit-learn)</span>
-              </div>
+
+            {/* NAME */}
+
+            <h1 className="hero-title">
+
+              {personalInfo.name}
+
+              <span className="hero-title-dot">.</span>
+
+            </h1>
+
+
+            {/* PROFESSIONAL HEADLINE */}
+
+            <h2 className="hero-headline">
+
+              Building Intelligent Applications
+              <span className="headline-break"> & Reliable Systems.</span>
+
+            </h2>
+
+
+            {/* PROFESSIONAL DESCRIPTION */}
+
+            <p className="hero-bio">
+
+              Computer Science postgraduate passionate about developing
+              intelligent applications, building modern web solutions,
+              and managing reliable database systems.
+
+              Exploring the intersection of
+              <strong> AI & Machine Learning</strong>,
+              <strong> Oracle Database Administration</strong>,
+              and <strong> Full Stack Development</strong>.
+
+            </p>
+
+
+            {/* EDUCATION */}
+
+            <div className="hero-education">
+
+              <FaGraduationCap />
+
+              <span>
+                M.Sc. Computer Science
+              </span>
+
+              <span className="education-divider">·</span>
+
+              <span>
+                St. Joseph's College, Trichy
+              </span>
+
             </div>
 
-            {/* Recruiter Action Buttons */}
-            <div className="hero-actions-container mb-4">
-              <a href="#projects" className="btn-hero-primary">
-                Explore Projects <FaArrowRight />
-              </a>
 
-              <a 
-                href={personalInfo.resumePdf} 
-                download="Simon_Sesuraj_Resume.pdf" 
-                className="btn-hero-secondary"
-                title="Download resume"
-              >
-                <FaFileDownload /> Download CV
-              </a>
+            {/* =================================
+                SPECIALIZATION CARDS
+            ================================= */}
 
-              <button 
-                onClick={handleCopyEmail} 
-                className={`btn-hero-copy ${copied ? 'copied' : ''}`}
-                title="Copy email to clipboard"
-                aria-label="Copy email address"
-              >
-                {copied ? <FaCheck /> : <FaCopy />}
-                <span>{copied ? "Copied!" : "Copy Email"}</span>
-              </button>
-            </div>
+            <div className="hero-specializations">
 
-            {/* Social Links & Direct Connect */}
-            <div className="hero-socials-row">
-              <span className="social-label">Connect:</span>
-              <a 
-                href={personalInfo.socials.linkedin} 
-                target="_blank" 
-                rel="noopener noreferrer me" 
-                className="hero-social-link linkedin"
-                aria-label="Simon Sesuraj LinkedIn Profile"
-                title="Simon Sesuraj on LinkedIn"
-              >
-                <FaLinkedin />
-              </a>
-              <a 
-                href={personalInfo.socials.github} 
-                target="_blank" 
-                rel="noopener noreferrer me" 
-                className="hero-social-link github"
-                aria-label="Simon Sesuraj GitHub Profile & Repositories"
-                title="Simon Sesuraj on GitHub (Repositories)"
-              >
-                <FaGithub />
-              </a>
-              <a 
-                href={`https://wa.me/${personalInfo.whatsappNumber}?text=${encodeURIComponent(personalInfo.whatsappMessage)}`} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="hero-social-link whatsapp"
-                aria-label="WhatsApp Chat with Simon Sesuraj"
-                title="Chat with Simon on WhatsApp"
-              >
-                <FaWhatsapp />
-              </a>
-            </div>
+              {/* AI & ML */}
 
-          </div>
+              <div className="specialization-card">
 
-          {/* RIGHT PROFILE CARD */}
-          <div className="col-12 col-lg-5 text-center" data-aos="fade-left">
-            <div className="hero-image-wrapper">
-              
-              {/* Outer Decorative Glow Rings */}
-              <div className="avatar-glow-ring"></div>
-              
-              <div className="hero-avatar-frame">
-                <img 
-                  src={personalInfo.avatar} 
-                  alt={`${personalInfo.name} - Full Stack Developer and AI & Machine Learning Developer`}
-                  className="hero-avatar-img"
-                  loading="eager"
-                />
-              </div>
-
-              {/* Floating Highlight Badges
-              <div className="floating-badge badge-top-right">
-                <div className="badge-icon-wrap dba">
-                  <FaDatabase />
-                </div>
-                <div className="badge-text">
-                  <div className="badge-title">Oracle DBA</div>
-                  <div className="badge-sub">SQL · Tuning . Backup & Recovery</div>
-                </div>
-              </div>
-
-              <div className="floating-badge badge-bottom-left">
-                <div className="badge-icon-wrap ai">
+                <div className="specialization-icon ai-icon">
                   <FaBrain />
                 </div>
-                <div className="badge-text">
-                  <div className="badge-title">AI & ML Engineer</div>
-                  <div className="badge-sub">FastAPI · Scikit-learn</div>
+
+                <div className="specialization-content">
+
+                  <h3>AI & Machine Learning</h3>
+
+                  <p>Python · Scikit-learn · FastAPI</p>
+
                 </div>
-              </div> */}
+
+              </div>
+
+
+              {/* ORACLE DBA */}
+
+              <div className="specialization-card">
+
+                <div className="specialization-icon dba-icon">
+                  <FaDatabase />
+                </div>
+
+                <div className="specialization-content">
+
+                  <h3>Oracle Database Administration</h3>
+
+                  <p>Oracle 19c/21c · SQL · RMAN</p>
+
+                </div>
+
+              </div>
+
+
+              {/* FULL STACK */}
+
+              <div className="specialization-card">
+
+                <div className="specialization-icon fullstack-icon">
+                  <FaCode />
+                </div>
+
+                <div className="specialization-content">
+
+                  <h3>Full Stack Development</h3>
+
+                  <p>React · Django · REST APIs</p>
+
+                </div>
+
+              </div>
 
             </div>
 
-            {/* Quick Stats Grid under image for recruiters */}
-            <div className="hero-stats-grid mt-4">
-              {personalInfo.stats.map((stat, idx) => (
-                <div key={idx} className="stat-card">
-                  <div className="stat-val">{stat.value}</div>
-                  <div className="stat-label">{stat.label}</div>
+
+            {/* =================================
+                ACTION BUTTONS
+            ================================= */}
+
+            <div className="hero-actions">
+
+              <a
+                href="#projects"
+                className="hero-btn-primary"
+              >
+
+                Explore My Projects
+
+                <FaArrowRight />
+
+              </a>
+
+
+              <a
+                href={personalInfo.resumePdf}
+                download="Simon_Sesuraj_Resume.pdf"
+                className="hero-btn-secondary"
+              >
+
+                <FaFileDownload />
+
+                Download CV
+
+              </a>
+
+            </div>
+
+
+            {/* =================================
+                SOCIAL LINKS
+            ================================= */}
+
+            <div className="hero-social-section">
+
+              <span className="social-heading">
+                Let's connect
+              </span>
+
+
+              <div className="hero-social-links">
+
+                {/* EMAIL */}
+
+                <button
+                  type="button"
+                  onClick={handleCopyEmail}
+                  className="hero-social-link"
+                  title="Copy email address"
+                  aria-label="Copy email address"
+                >
+
+                  {copied ? <FaCheck /> : <FaEnvelope />}
+
+                  <span>
+                    {copied ? "Copied" : "Email"}
+                  </span>
+
+                </button>
+
+
+                {/* LINKEDIN */}
+
+                <a
+                  href={personalInfo.socials.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hero-social-link"
+                  aria-label="LinkedIn profile"
+                  title="LinkedIn"
+                >
+
+                  <FaLinkedin />
+
+                  <span>LinkedIn</span>
+
+                </a>
+
+
+                {/* GITHUB */}
+
+                <a
+                  href={personalInfo.socials.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hero-social-link"
+                  aria-label="GitHub profile"
+                  title="GitHub"
+                >
+
+                  <FaGithub />
+
+                  <span>GitHub</span>
+
+                </a>
+
+
+                {/* WHATSAPP */}
+
+                <a
+                  href={`https://wa.me/${personalInfo.whatsappNumber}?text=${encodeURIComponent(personalInfo.whatsappMessage)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hero-social-link"
+                  aria-label="Contact through WhatsApp"
+                  title="WhatsApp"
+                >
+
+                  <FaWhatsapp />
+
+                  <span>WhatsApp</span>
+
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          {/* =================================
+              RIGHT PROFILE SECTION
+          ================================= */}
+
+          <div
+            className="col-12 col-lg-5"
+            data-aos="fade-left"
+          >
+
+            <div className="hero-profile-area">
+
+
+              {/* PROFILE IMAGE */}
+
+              <div className="hero-profile-card">
+
+                <div className="profile-image-container">
+
+                  <img
+                    src={personalInfo.avatar}
+                    alt={`${personalInfo.name} - Professional profile`}
+                    className="hero-profile-image"
+                    loading="eager"
+                  />
+
                 </div>
-              ))}
+
+
+                {/* IMAGE OVERLAY */}
+
+                <div className="profile-overlay">
+
+                  <span className="profile-overlay-label">
+                    COMPUTER SCIENCE
+                  </span>
+
+                  <h3>
+                    Passionate about
+                    <br />
+                    Technology & Innovation.
+                  </h3>
+
+                </div>
+
+              </div>
+
+
+              {/* FLOATING TECHNOLOGY BADGES */}
+
+              <div className="floating-tech-card tech-card-top">
+
+                <FaBrain className="floating-ai-icon" />
+
+                <div>
+                  <strong>AI & ML</strong>
+                  <span>Intelligent Solutions</span>
+                </div>
+
+              </div>
+
+
+              <div className="floating-tech-card tech-card-bottom">
+
+                <FaDatabase className="floating-db-icon" />
+
+                <div>
+                  <strong>Oracle DBA</strong>
+                  <span>Database Management</span>
+                </div>
+
+              </div>
+
+
+              {/* BOTTOM PROFILE CAPTION */}
+
+              <div className="profile-caption">
+
+                <div className="profile-caption-icon">
+                  <FaCode />
+                </div>
+
+                <div>
+
+                  <strong>Developer & Database Enthusiast</strong>
+
+                  <span>
+                    Learning · Building · Improving
+                  </span>
+
+                </div>
+
+              </div>
+
             </div>
 
           </div>
 
         </div>
+
       </div>
 
-      {/* Floating Copied Toast */}
-      {copied && (
-        <div className="custom-toast">
-          <FaCheck className="text-emerald" />
-          <span>Email address copied to clipboard!</span>
-        </div>
-      )}
+
+      {/* SCROLL INDICATOR */}
+
+      <a
+        href="#about"
+        className="hero-scroll-indicator"
+        aria-label="Scroll to About section"
+      >
+
+        <span></span>
+
+        Scroll to explore
+
+      </a>
+
     </section>
+
   );
+
 }

@@ -1,127 +1,178 @@
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
+
 import { certifications } from "../data/certificationsData";
-import { 
-  FaExternalLinkAlt, 
-  FaAward, 
-  FaTimes, 
-  FaCheckCircle, 
-  FaSearchPlus,
-  FaDatabase,
-  FaBrain,
-  FaCode,
+
+import {
+  FaAward,
+  FaExternalLinkAlt,
+  FaTimes,
   FaLayerGroup,
-  FaPython
+  FaPython,
+  FaBrain
 } from "react-icons/fa";
-import './Certifications.css';
-import { Si365Datascience,SiHiveBlockchain } from "react-icons/si";
+
+import {
+  Si365Datascience,
+  SiHiveBlockchain
+} from "react-icons/si";
+
 import { GiCyberEye } from "react-icons/gi";
 
+import "./Certifications.css";
+
+const categories = [
+  { id: "all", label: "All", icon: <FaLayerGroup /> },
+  { id: "python", label: "Python", icon: <FaPython /> },
+  { id: "ai", label: "AI & ML", icon: <FaBrain /> },
+  { id: "cybersecurity", label: "Cybersecurity", icon: <GiCyberEye /> },
+  { id: "datascience", label: "Data Science", icon: <Si365Datascience /> },
+  { id: "blockchain", label: "Blockchain", icon: <SiHiveBlockchain /> }
+];
+
 export default function Certifications() {
-  const [activeCertCategory, setActiveCertCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState("all");
   const [previewCert, setPreviewCert] = useState(null);
 
-  const categories = [
-    { id: "all", label: "All Credentials", icon: <FaLayerGroup /> },
-    { id: "python", label: "Python", icon: <FaPython /> },
-    { id: "ai", label: "AI", icon: <FaBrain /> },
-    // { id: "fullstack", label: "Web Engineering", icon: <FaCode /> },
-    { id: "cybersecurity", label: "Cybersecurity", icon: <GiCyberEye /> },
-    { id: "datascience", label: "DataScience", icon: <Si365Datascience /> },
-    { id: "blockchain", label: "Blockchain", icon: <SiHiveBlockchain /> }
-  ];
-
-  const filteredCerts = certifications.filter((c) => {
-    if (activeCertCategory === "all") return true;
-    return c.category === activeCertCategory;
+  const filteredCerts = certifications.filter((cert) => {
+    return (
+      activeCategory === "all" ||
+      cert.category === activeCategory
+    );
   });
+
+  // Close preview with Escape key
+  useEffect(() => {
+    if (!previewCert) return;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setPreviewCert(null);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [previewCert]);
 
   return (
     <section className="certifications-section" id="certifications">
       <div className="container">
-        
+
         {/* Section Header */}
-        <div className="text-center mb-5" data-aos="fade-up">
-          <div className="section-badge">Certifications & Training</div>
-          <h2 className="section-title">Certifications & Training</h2>
-          <p className="section-subtitle">
-            Technical certifications and training programs covering Python, AI, cybersecurity, data science, and blockchain.
+        <div className="cert-heading text-center" data-aos="fade-up">
+          <span className="cert-eyebrow">LEARNING & DEVELOPMENT</span>
+
+          <h2 className="section-title">Certifications</h2>
+
+          <p className="cert-subtitle">
+            Professional training and certifications that reflect
+            my continuous learning in technology.
           </p>
         </div>
 
-        {/* Category Pills */}
-        <div className="role-pills-container mb-5" data-aos="fade-up">
-          {categories.map((cat) => (
+        {/* Category Filters */}
+        <div className="cert-filters" data-aos="fade-up">
+          {categories.map((category) => (
             <button
-              key={cat.id}
-              className={`role-pill ${activeCertCategory === cat.id ? "active" : ""}`}
-              onClick={() => setActiveCertCategory(cat.id)}
+              key={category.id}
+              type="button"
+              className={`cert-filter ${
+                activeCategory === category.id ? "active" : ""
+              }`}
+              onClick={() => setActiveCategory(category.id)}
+              aria-pressed={activeCategory === category.id}
             >
-              {cat.icon}
-              <span>{cat.label}</span>
+              {category.icon}
+              <span>{category.label}</span>
             </button>
           ))}
         </div>
 
-        {/* Certifications Grid */}
+        {/* Certificate Count */}
+        <div className="cert-results-info">
+          <span>
+            {filteredCerts.length}{" "}
+            {filteredCerts.length === 1 ? "credential" : "credentials"}
+          </span>
+        </div>
+
+        {/* Certificate Grid */}
         <div className="row g-4">
           {filteredCerts.map((cert, index) => (
-            <div 
-              key={cert.id || index} 
-              className="col-12 col-md-6 col-lg-4" 
-              data-aos="fade-up" 
-              data-aos-delay={(index % 3) * 100}
+            <div
+              key={cert.id || index}
+              className="col-12 col-md-6 col-lg-4"
+              data-aos="fade-up"
+              data-aos-delay={(index % 3) * 80}
             >
-              <div className="cert-card glass-card h-100 d-flex flex-column">
-                
-                {/* Image Wrap with Preview Click */}
-                <div 
-                  className="cert-img-wrap" 
+              <article className="cert-card">
+
+                {/* Certificate Image */}
+                <button
+                  type="button"
+                  className="cert-image-button"
                   onClick={() => setPreviewCert(cert)}
-                  title="Click to view full certificate"
+                  aria-label={`Preview ${cert.title}`}
                 >
-                  <img 
-                    src={cert.image} 
-                    alt={cert.title} 
-                    className="cert-img" 
+                  <img
+                    src={cert.image}
+                    alt={`${cert.title} certificate`}
+                    className="cert-image"
                     loading="lazy"
                   />
-                  <div className="cert-img-overlay">
-                    <span className="overlay-preview-btn">
-                      <FaSearchPlus /> Preview Certificate
+
+                  <span className="cert-preview-label">
+                    View certificate
+                  </span>
+                </button>
+
+                {/* Certificate Details */}
+                <div className="cert-content">
+
+                  <div className="cert-meta">
+                    <span className="cert-issuer">
+                      <FaAward />
+                      {cert.issuer}
                     </span>
-                  </div>
-                  <span className="cert-year-badge">{cert.year}</span>
-                </div>
 
-                {/* Content */}
-                <div className="p-4 d-flex flex-column flex-grow-1">
-                  
-                  <div className="d-flex align-items-center gap-2 mb-2">
-                    <FaAward className="text-cyan" />
-                    <span className="cert-issuer">{cert.issuer}</span>
+                    {cert.year && (
+                      <span className="cert-year">
+                        {cert.year}
+                      </span>
+                    )}
                   </div>
 
-                  <h4 className="cert-card-title font-heading mb-3">
+                  <h3 className="cert-title">
                     {cert.title}
-                  </h4>
+                  </h3>
 
-                  {cert.skills && (
-                    <div className="d-flex flex-wrap gap-1 mb-4">
-                      {cert.skills.map((skill, i) => (
-                        <span key={i} className="cert-skill-pill">
+                  {cert.skills?.length > 0 && (
+                    <div className="cert-skills">
+                      {cert.skills.slice(0, 4).map((skill, i) => (
+                        <span key={i} className="cert-skill">
                           {skill}
                         </span>
                       ))}
+
+                      {cert.skills.length > 4 && (
+                        <span className="cert-skill-more">
+                          +{cert.skills.length - 4}
+                        </span>
+                      )}
                     </div>
                   )}
 
-                  {/* Actions */}
-                  <div className="mt-auto d-flex gap-2 pt-3 cert-actions-row">
-                    <button 
-                      className="btn-cert-inspect"
+                  <div className="cert-footer">
+                    <button
+                      type="button"
+                      className="cert-view-btn"
                       onClick={() => setPreviewCert(cert)}
                     >
-                      Inspect
+                      View Details
                     </button>
 
                     {cert.link && (
@@ -129,63 +180,91 @@ export default function Certifications() {
                         href={cert.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn-cert-verify"
+                        className="cert-verify-link"
                       >
-                        Verify <FaExternalLinkAlt className="ms-1" size={12} />
+                        Verify
+                        <FaExternalLinkAlt />
                       </a>
                     )}
                   </div>
 
                 </div>
-
-              </div>
+              </article>
             </div>
           ))}
         </div>
 
+        {/* Empty State */}
+        {filteredCerts.length === 0 && (
+          <div className="cert-empty">
+            <FaAward />
+            <h3>No certificates found</h3>
+            <p>There are no certificates in this category yet.</p>
+          </div>
+        )}
+
       </div>
 
-      {/* Certificate Lightbox / Modal */}
+      {/* Certificate Preview Modal */}
       {previewCert && (
-        <div className="cert-lightbox-backdrop" onClick={() => setPreviewCert(null)}>
-          <div className="cert-lightbox-box glass-card" onClick={(e) => e.stopPropagation()}>
-            
-            <div className="cert-lightbox-header">
+        <div
+          className="cert-modal-backdrop"
+          onClick={() => setPreviewCert(null)}
+        >
+          <div
+            className="cert-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="cert-modal-title"
+            onClick={(event) => event.stopPropagation()}
+          >
+
+            <div className="cert-modal-header">
               <div>
-                <h4 className="cert-lightbox-title font-heading m-0">{previewCert.title}</h4>
-                <small className="cert-lightbox-sub">{previewCert.issuer} · {previewCert.year}</small>
+                <h3 id="cert-modal-title">
+                  {previewCert.title}
+                </h3>
+
+                <p>
+                  {previewCert.issuer}
+                  {previewCert.year && ` · ${previewCert.year}`}
+                </p>
               </div>
-              <button 
-                className="modal-close-btn"
+
+              <button
+                type="button"
+                className="cert-modal-close"
                 onClick={() => setPreviewCert(null)}
-                aria-label="Close certificate preview"
+                aria-label="Close preview"
               >
                 <FaTimes />
               </button>
             </div>
 
-            <div className="cert-lightbox-body">
-              <img 
-                src={previewCert.image} 
-                alt={previewCert.title} 
-                className="cert-lightbox-img" 
+            <div className="cert-modal-image-wrap">
+              <img
+                src={previewCert.image}
+                alt={`${previewCert.title} certificate`}
+                className="cert-modal-image"
               />
             </div>
 
-            <div className="cert-lightbox-footer">
+            <div className="cert-modal-footer">
               {previewCert.credentialId && (
-                <div className="cert-cred-id font-mono">
-                  Credential ID: <span>{previewCert.credentialId}</span>
-                </div>
+                <p className="cert-credential-id">
+                  Credential ID: {previewCert.credentialId}
+                </p>
               )}
+
               {previewCert.link && (
                 <a
                   href={previewCert.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-lightbox-verify"
+                  className="cert-modal-verify"
                 >
-                  Open Official Verification Link <FaExternalLinkAlt className="ms-2" size={13} />
+                  Verify Credential
+                  <FaExternalLinkAlt />
                 </a>
               )}
             </div>
@@ -193,6 +272,7 @@ export default function Certifications() {
           </div>
         </div>
       )}
+
     </section>
   );
 }

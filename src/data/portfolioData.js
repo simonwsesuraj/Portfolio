@@ -1,135 +1,336 @@
+
 import { resolveAsset } from "../utils/imageResolver";
+
+// ============================================
+// 1. PERSONAL INFORMATION
+// ============================================
 
 export const personalInfo = {
   name: "Simon Sesuraj",
+
   titles: [
     "Full Stack Developer",
     "Oracle Database Administrator (DBA)",
-    "AI & Machine Learning Developer"
+    "Python & Machine Learning Developer"
   ],
-  headline: "Simon Sesuraj (Simon Sesuraj W) | Full Stack Developer · Oracle DBA · AI & ML",
-  bio: "Simon Sesuraj (Simon Sesuraj W) is a Full Stack Developer and Computer Science postgraduate building production-ready web applications with React & Django, enterprise database architectures with Oracle 19c/21c DBA, and machine learning solutions with Python & FastAPI.",
-  shortBio: "Full Stack Developer (React & Django), Oracle Database Administrator, and AI/ML Engineer.",
+
+  headline:
+    "Simon Sesuraj | Full Stack Developer · Oracle DBA · AI & ML",
+
+  bio:
+    "Computer Science postgraduate with an interest in Full Stack Development, Oracle Database Administration, and Artificial Intelligence. Building web applications using React, Django, and Python, while developing practical experience in Oracle databases and machine learning.",
+
+  shortBio:
+    "Full Stack Developer | Oracle DBA | Python & Machine Learning Enthusiast",
+
   location: "Trichy, Tamil Nadu, India",
+
   email: "simonwsesuraj@gmail.com",
+
   phone: "+91 9597964813",
+
   whatsappNumber: "919597964813",
-  whatsappMessage: "Hello Simon, I came across your portfolio and would like to connect regarding an opportunity.",
+
+  whatsappMessage:
+    "Hello Simon, I came across your portfolio and would like to connect regarding an opportunity.",
+
   statusBadge: "Open to Full-Time Opportunities",
+
   avatar: resolveAsset("hero.png", "/hero.png"),
+
   resumePdf: resolveAsset("resume.pdf", "/resume.pdf"),
+
   socials: {
     github: "https://github.com/simonwsesuraj",
+
     linkedin: "https://www.linkedin.com/in/simonwsesuraj",
-    instagram: "https://www.instagram.com/p/DK7ppqABxT3/?igsh=MWlkbXQxYmJmZmJlaw%3D%3D",
+
+    instagram:
+      "https://www.instagram.com/p/DK7ppqABxT3/?igsh=MWlkbXQxYmJmZmJlaw%3D%3D",
+
     mailTo: "mailto:simonwsesuraj@gmail.com",
-    gmailCompose: "https://mail.google.com/mail/?view=cm&fs=1&to=simonwsesuraj@gmail.com&su=Career%20Opportunity%20-%20Portfolio%20Inquiry&body=Hi%20Simon,%0D%0A%0D%0AI%20reviewed%20your%20portfolio%20and%20would%20love%20to%20discuss%20an%20opportunity%20with%20you."
+
+    gmailCompose:
+      "https://mail.google.com/mail/?view=cm&fs=1&to=simonwsesuraj@gmail.com&su=Career%20Opportunity%20-%20Portfolio%20Inquiry&body=Hi%20Simon,%0D%0A%0D%0AI%20reviewed%20your%20portfolio%20and%20would%20love%20to%20discuss%20an%20opportunity%20with%20you."
   },
+
   stats: [
-    { label: "Academic CGPA (M.Sc)", value: "8.64" },
-    { label: "Core Focus Tracks", value: "3 (Full Stack, DBA, AI)" },
-    { label: "Projects Completed", value: "8+" },
-    { label: "Databases & Tools", value: "15+" }
+    {
+      label: "Current M.Sc CGPA",
+      value: "8.64"
+    },
+    {
+      label: "Technical Focus Areas",
+      value: "3"
+    },
+    {
+      label: "Projects Completed",
+      value: "8+"
+    },
+    {
+      label: "Technologies & Tools",
+      value: "15+"
+    }
   ]
 };
+
+
+// ============================================
+// 2. ROLE TRACKS
+// ============================================
 
 export const roleTracks = [
   {
     id: "all",
     label: "All Expertise",
     icon: "FaLayerGroup",
-    description: "Holistic view across Web, Database, and Artificial Intelligence"
+    description:
+      "Explore my skills and experience across Full Stack Development, Oracle DBA, and AI/ML."
   },
   {
     id: "fullstack",
     label: "Full Stack Developer",
     icon: "FaCode",
-    description: "Modern web apps with React, Django, REST APIs, and responsive architectures"
+    description:
+      "Building responsive web applications using React, Django, Python, and REST APIs."
   },
   {
     id: "dba",
     label: "Oracle DBA",
     icon: "FaDatabase",
-    description: "Oracle Database administration, SQL, indexing, backup and recovery, and performance tuning"
+    description:
+      "Working with Oracle Database administration, SQL, database architecture, backup, and recovery."
   },
   {
     id: "ai",
     label: "AI & Machine Learning",
     icon: "FaBrain",
-    description: "Predictive modeling, FastAPI backend microservices, Scikit-learn, and data pipelines"
+    description:
+      "Exploring machine learning, data processing, predictive modeling, and Python-based applications."
   }
 ];
 
 
-
-
-
+// ============================================
+// 3. TECHNICAL SKILLS
+// ============================================
 
 export const skillsData = {
+
+  // ------------------------------------------
+  // FULL STACK DEVELOPMENT
+  // ------------------------------------------
+
   fullstack: [
-    { name: "React.js", level: 90, icon: "FaReact", desc: "Component architecture, hooks, state, context" },
-    { name: "Django & Python", level: 85, icon: "FaPython", desc: "ORM, REST framework, authentication, middleware" },
-    { name: "JavaScript (ES6+)", level: 90, icon: "FaJs", desc: "Async/await, closures, functional patterns, DOM" },
-    { name: "Bootstrap 5 & CSS3", level: 88, icon: "FaBootstrap", desc: "Responsive grids, flexbox, glassmorphism, animations" },
-    { name: "RESTful API Design", level: 85, icon: "FaNetworkWired", desc: "CRUD contracts, JSON serialization, HTTP status codes" },
-    { name: "HTML5 & Accessibility", level: 92, icon: "FaHtml5", desc: "Semantic structure, SEO tags, ARIA attributes" }
+    {
+      name: "React.js",
+      icon: "FaReact",
+      desc: "Components, Hooks, Props, State Management, and React application development."
+    },
+    {
+      name: "Python & Django",
+      icon: "FaPython",
+      desc: "Django applications, ORM, authentication, models, views, and backend development."
+    },
+    {
+      name: "JavaScript (ES6+)",
+      icon: "FaJs",
+      desc: "Modern JavaScript, DOM manipulation, asynchronous programming, and ES6 features."
+    },
+    {
+      name: "Bootstrap 5 & CSS3",
+      icon: "FaBootstrap",
+      desc: "Responsive layouts, Bootstrap components, Flexbox, Grid, and custom styling."
+    },
+    {
+      name: "RESTful APIs",
+      icon: "FaNetworkWired",
+      desc: "API development, CRUD operations, JSON, HTTP methods, and API integration."
+    },
+    {
+      name: "HTML5",
+      icon: "FaHtml5",
+      desc: "Semantic HTML, forms, page structure, and accessible web content."
+    }
   ],
+
+
+  // ------------------------------------------
+  // ORACLE DATABASE ADMINISTRATION
+  // ------------------------------------------
+
   dba: [
-    { name: "Oracle Database 19c/21c", level: 85, icon: "FaDatabase", desc: "Architecture, tablespaces, memory structures, multitenancy" },
-    { name: "SQL & Advanced Queries", level: 92, icon: "FaDatabase", desc: "Complex joins, analytical functions, CTEs, subqueries" },
-    { name: "Performance Tuning", level: 80, icon: "FaTachometerAlt", desc: "Explain Plan, SQL Trace, Cost-Based Optimizer, indexing" },
-    { name: "Schema & Relational Design", level: 88, icon: "FaProjectDiagram", desc: "Normalization (1NF-3NF/BCNF), ER diagrams, constraints" },
-    { name: "Backup & Recovery (RMAN)", level: 78, icon: "FaServer", desc: "Disaster recovery basics, export/import (Data Pump), archivelog" }
+    {
+      name: "Oracle Database 19c/21c",
+      icon: "FaDatabase",
+      desc: "Oracle architecture, database creation, tablespaces, users, and memory structures."
+    },
+    {
+      name: "SQL & PL/SQL",
+      icon: "FaDatabase",
+      desc: "Joins, subqueries, functions, procedures, triggers, and database operations."
+    },
+    {
+      name: "Database Administration",
+      icon: "FaServer",
+      desc: "User management, privileges, tablespaces, database configuration, and monitoring."
+    },
+    {
+      name: "Database Performance Basics",
+      icon: "FaTachometerAlt",
+      desc: "Execution plans, indexing, SQL analysis, and basic performance troubleshooting."
+    },
+    {
+      name: "Backup & Recovery",
+      icon: "FaCloudUploadAlt",
+      desc: "RMAN fundamentals, backup strategies, recovery concepts, and Data Pump."
+    },
+    {
+      name: "Linux / Bash",
+      icon: "FaTerminal",
+      desc: "Linux commands, file permissions, process management, and Oracle environment setup."
+    }
   ],
+
+
+  // ------------------------------------------
+  // ARTIFICIAL INTELLIGENCE & MACHINE LEARNING
+  // ------------------------------------------
+
   ai: [
-    { name: "Python for AI/ML", level: 95, icon: "FaPython", desc: "Data structures, algorithms, functional programming, OOP" },
-    { name: "FastAPI", level: 85, icon: "FaBolt", desc: "REST APIs for serving machine learning models" },
-    { name: "Scikit-learn", level: 80, icon: "FaBrain", desc: "Regression, classification, cross-validation, pipelines" },
-    { name: "Pandas & NumPy", level: 90, icon: "FaChartBar", desc: "Data wrangling, matrix manipulation, missing value imputation" },
-    { name: "Data Visualization", level: 85, icon: "FaChartLine", desc: "Matplotlib & Seaborn exploratory data analysis" },
-    { name: "Model Deployment", level: 78, icon: "FaCloudUploadAlt", desc: "Model serialization (Joblib/Pickle) and REST serving" }
+    {
+      name: "Python for AI/ML",
+      icon: "FaPython",
+      desc: "Python programming, object-oriented programming, and data processing."
+    },
+    {
+      name: "FastAPI",
+      icon: "FaBolt",
+      desc: "Building Python REST APIs and integrating application logic."
+    },
+    {
+      name: "Scikit-learn",
+      icon: "FaBrain",
+      desc: "Machine learning fundamentals, classification, regression, and model evaluation."
+    },
+    {
+      name: "Pandas & NumPy",
+      icon: "FaChartBar",
+      desc: "Data manipulation, numerical operations, and dataset processing."
+    },
+    {
+      name: "Data Visualization",
+      icon: "FaChartLine",
+      desc: "Exploratory data analysis and visualization using Matplotlib and Seaborn."
+    },
+    {
+      name: "Machine Learning Model Deployment",
+      icon: "FaCloudUploadAlt",
+      desc: "Model serialization and exposing trained models through Python APIs."
+    }
   ],
+
+
+  // ------------------------------------------
+  // DEVELOPMENT TOOLS
+  // ------------------------------------------
+
   tools: [
-    { name: "Git & GitHub", level: 90, icon: "FaGithub", desc: "Branching workflows, pull requests, version control" },
-    { name: "Linux / Bash", level: 82, icon: "FaTerminal", desc: "Shell scripting, process management, file permissions" },
-    { name: "Vercel & Render", level: 88, icon: "FaCloud", desc: "CI/CD automated deployment, environment variables" },
-    { name: "Postman", level: 85, icon: "FaTools", desc: "API testing, collections, environment management" },
-    { name: "VS Code & Tooling", level: 92, icon: "FaLaptopCode", desc: "Vite, ESLint, npm package management, debugging" }
+    {
+      name: "Git & GitHub",
+      icon: "FaGithub",
+      desc: "Version control, repositories, commits, branches, and project collaboration."
+    },
+    {
+      name: "Linux",
+      icon: "FaTerminal",
+      desc: "Command-line operations, file management, permissions, and process handling."
+    },
+    {
+      name: "Vercel & Render",
+      icon: "FaCloud",
+      desc: "Deploying frontend and backend applications."
+    },
+    {
+      name: "Postman",
+      icon: "FaTools",
+      desc: "REST API testing, HTTP requests, and response validation."
+    },
+    {
+      name: "VS Code",
+      icon: "FaLaptopCode",
+      desc: "Development environment, extensions, debugging, and project management."
+    },
+    {
+      name: "PostgreSQL & MongoDB",
+      icon: "FaDatabase",
+      desc: "Working with relational and NoSQL databases."
+    }
   ]
 };
+
+
+// ============================================
+// 4. EDUCATION
+// ============================================
 
 export const education = [
   {
     degree: "Master of Science in Computer Science (M.Sc)",
-    institution: "St. Joseph's College (Autonomous), Trichy",
+
+    institution:
+      "St. Joseph's College (Autonomous), Trichy",
+
     duration: "2025 - 2027",
-    score: "CGPA : 8.64",
-    highlights: "Specialization in Advanced Database Systems, Machine Learning Architectures, and Full-Stack Web Development."
+
+    score: "Current CGPA: 8.64",
+
+    highlights:
+      "Postgraduate studies in Computer Science, covering advanced computing concepts, database systems, software development, and machine learning."
   },
   {
     degree: "Bachelor of Science in Computer Science (B.Sc)",
-    institution: "St. Joseph's College (Autonomous), Trichy",
+
+    institution:
+      "St. Joseph's College (Autonomous), Trichy",
+
     duration: "2022 - 2025",
-    score: "CGPA : 7.14",
-    highlights: "Core fundamentals: Data Structures, RDBMS & SQL, Object-Oriented Programming (Java/Python), Software Engineering."
+
+    score: "CGPA: 7.14",
+
+    highlights:
+      "Studied programming, data structures, database management systems, object-oriented programming, and software engineering."
   }
 ];
 
+
+// ============================================
+// 5. RECRUITER HIGHLIGHTS
+// ============================================
+
 export const recruiterHighlights = [
   {
-    title: "3 Core Pillars",
-    subtitle: "Full Stack + Oracle DBA + AI",
+    title: "Three Technical Focus Areas",
+
+    subtitle: "Full Stack · Oracle DBA · AI/ML",
+
     description:
-  "A cross-disciplinary profile covering responsive web development, Oracle database administration, and practical machine learning solutions."
+      "A multidisciplinary Computer Science profile covering web application development, database administration, and practical machine learning."
   },
   {
-    title: "Strong Academic Record",
-    subtitle: "M.Sc CGPA 8.64",
-    description: "Strong theoretical foundation matched with hands-on practical project deployment experience."
+    title: "Academic Background",
+
+    subtitle: "M.Sc Computer Science · 2025–2027",
+
+    description:
+      "Postgraduate studies in Computer Science, supported by a Bachelor's degree in Computer Science."
   },
   {
-  title: "End-to-End Development",
-  subtitle: "FastAPI, React, Django",
-  description: "Experience building and deploying full-stack applications using React, Django, FastAPI, and modern deployment platforms."
-}
+    title: "Project-Based Experience",
+
+    subtitle: "React · Django · Python · Oracle",
+
+    description:
+      "Hands-on experience developing web applications, working with relational databases, and exploring Python-based machine learning."
+  }
 ];
